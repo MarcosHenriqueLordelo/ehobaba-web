@@ -1,12 +1,15 @@
-import React from 'react';
-import Icon from 'react-icons/md';
+import React from "react";
 
-import './articles.css';
+import { Container, Label, LeftContainer, RightContainer } from "./styles";
+
+import useUi from '../../contexts/ui/useUi';
+
+import IconButton from '../IconButton'
 
 interface PropTypes {
   title?: string;
-  primaryAction?: keyof typeof Icon.glyphMap;
-  secondaryAction?: keyof typeof Icon.glyphMap;
+  primaryAction?: IconName;
+  secondaryAction?: IconName;
   onPrimaryAction?: () => void;
   onSecondaryAction?: () => void;
   onBack?: () => void;
@@ -23,39 +26,37 @@ const AppBar: React.FC<PropTypes> = ({
   const { theme } = useUi();
 
   return (
-    <div className="container">
-      <div className="leftcontainer">
+    <Container>
+      <LeftContainer>
         {onBack && (
-          <button className="iconcontainer" onClick={onBack}>
-            <Icon
-              size={24}
-              color={theme.colors.action}
-            />
-          </button>
+          <IconButton
+            onPress={onBack}
+            size={24}
+            color={theme.colors.action}
+            name='arrow-back'
+          />
         )}
-        <p className="label">{title}</p>
-      </div>
-      <div className="rightcontainer">
+        <Label>{title}</Label>
+      </LeftContainer>
+      <RightContainer>
         {primaryAction && (
-          <button className="iconcontainer" onClick={onPrimaryAction}>
-            <Icon
-              size={24}
-              color={theme.colors.action}
-              name={primaryAction}
-            />
-          </button>
+          <IconButton
+            onPress={onPrimaryAction}
+            size={24}
+            color={theme.colors.action}
+            name={primaryAction}
+          />
         )}
         {secondaryAction && (
-          <button className="iconcontainer" onClick={onSecondaryAction}>
-            <Icon
-              size={24}
-              color={theme.colors.action}
-              name={secondaryAction}
-            />
-          </button>
+          <IconButton
+            onPress={onSecondaryAction}
+            size={24}
+            color={theme.colors.action}
+            name={secondaryAction}
+          />
         )}
-      </div>
-    </div>
+      </RightContainer>
+    </Container>
   );
 };
 
