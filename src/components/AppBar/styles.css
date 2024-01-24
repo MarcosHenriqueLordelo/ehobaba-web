@@ -1,0 +1,41 @@
+.container {
+    height: 64px;
+    padding: 0px 16px;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .label{
+    line-height: 28px;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: '1.2em';
+    height: '1.2em';
+    color: ${({ theme }) => theme.colors.font};
+  }
+  
+  .leftcontainer{
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+  }
+
+  .rightcontainer{
+    flex-direction: row-reverse;
+    padding-right: 10px;
+  }
+  
+  .iconprops{
+    paddingLeft?: boolean;
+    paddingRight?: boolean;
+  }
+  
+  .iconcontainer{
+    padding-left: 10px;
+    ${({ paddingLeft }) => paddingLeft && `padding-left:24px;`}
+    ${({ paddingRight }) => paddingRight && `padding-right:16px;`}
+    justify-content: center;
+    align-items: center;
+  }
