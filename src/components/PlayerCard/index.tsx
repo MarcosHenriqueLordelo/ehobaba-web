@@ -89,7 +89,7 @@ const PlayerCard: React.FC<PropTypes> = ({
         </LeftContainer>
         <RightContainer>
           <Flag
-            source={{ uri: `https://countryflagsapi.com/png/${country}` }}
+            source={{ uri: `https://countryflagsapi.com/png/${country}` }} //transformar pra scr
             resizeMode="contain"
           />
           <RatingContainer>

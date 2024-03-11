@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
-import { RectButton, Swipeable } from 'react-native-gesture-handler';
+import Swipeable from 'react-swipeable'; //instalei aqui isso mas nao soube aplicar
+
 import IconButton from '../IconButton'
 
 import MyImage from '../MyImage';
@@ -14,6 +15,12 @@ interface PropTypes {
   onDelete?: () => void;
 }
 
+function MyButton() {
+  const handleClick = () => {
+    // Handle button click
+  };
+
+
 const CastListItem: React.FC<PropTypes> = ({
   itemData: { name, photoUrl },
   onDelete,
@@ -24,9 +31,9 @@ const CastListItem: React.FC<PropTypes> = ({
 
   const renderRightAction = () => {
     return (
-      <RectButton style={styles.deleteButtonContainer} onPress={onDelete}>
+      <button style={styles.deleteButtonContainer} onClick={onDelete}>
         <IconButton name="delete" size={24} color={theme.colors.font} />
-      </RectButton>
+      </button>
     );
   };
 

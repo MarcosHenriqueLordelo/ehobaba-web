@@ -1,4 +1,4 @@
-import Moment from 'react-moment';
+import Moment from 'react-moment'; //trocar pro moment ver como fazer
 import React from 'react';
 import IconButton from '../IconButton'
 
@@ -29,7 +29,7 @@ const BabaListItem: React.FC<PropTypes> = ({
     moment.unix(lastGameTimestamp!).format('DD/MM/YYYY');
 
   return (
-    <Container onPress={() => onPress && onPress(id)}>
+    <Container onClick={() => onPress && onPress(id)}>
       <LeftContainer>
         <Name>{name}</Name>
         {lastGameTimestamp && (

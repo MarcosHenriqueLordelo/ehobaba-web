@@ -8,6 +8,7 @@ interface PropTypes {
   selected?: boolean;
   onPress?: () => void;
 }
+// eu to mudando os onClick para onPress...
 
 const PlayerSelectableItem: React.FC<PropTypes> = ({
   player,
@@ -15,7 +16,7 @@ const PlayerSelectableItem: React.FC<PropTypes> = ({
   onPress,
 }) => {
   return (
-    <Container onPress={onPress} selected={selected}>
+    <Container onClick={onPress} selected={selected}> 
       <MyImage size={36} rounded uri={player.photoUrl} />
       <Spacer width={10} />
       <PlayerName>{player.name}</PlayerName>

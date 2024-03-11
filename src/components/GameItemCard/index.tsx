@@ -30,7 +30,7 @@ const GameItemCard: React.FC<PropTypes> = ({
   const { theme } = useUi();
 
   return (
-    <Container onPress={() => onPress && onPress(id)}>
+    <Container onClick={() => onPress && onPress(id)}>
       <HeaderContainer>
         <IconButton size={24} name="location-on" color={theme.colors.font} />
         <TitleContainer>

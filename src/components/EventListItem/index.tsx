@@ -33,7 +33,7 @@ const EventListItem: React.FC<PropTypes> = ({
         <Info>{`${type} - ${getInfoLabel()}`}</Info>
       </LeftContainer>
       {onDelete && showDelete && (
-        <DeleteContainer onPress={() => onDelete(id)}>
+        <DeleteContainer onClick={() => onDelete(id)}>
           <IconButton name="delete" size={24} color={theme.colors.action} />
         </DeleteContainer>
       )}

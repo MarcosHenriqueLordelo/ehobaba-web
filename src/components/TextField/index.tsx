@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { LayoutAnimation, StyleSheet } from 'react-native';
-import { MaskedTextInput } from 'react-native-mask-text';
-import SelectDropdown from 'react-native-select-dropdown';
+import { MaskedTextInput } from 'react-native-mask-text'; //mudar issoß
+import SelectDropdown from 'react-native-select-dropdown'; //mudar isso
 import { DefaultTheme } from 'styled-components';
 import IconButton from '../IconButton'
 
@@ -15,7 +15,6 @@ import {
   BackgroundContainer,
   DropDownLabel,
 } from './styles';
-import IconButton from '../IconButton';
 
 interface PropTypes {
   onValueChanged?: (value: string) => void;

@@ -1,6 +1,6 @@
 import React from 'react';
 import useUi from '../../contexts/ui/useUi';
-import { ActivityLoader, Container, Label, LoadingContainer } from './styles';
+import { Container, Label, LoadingContainer } from './styles';
 
 interface PropTypes {
   onPress?: () => void;
@@ -35,7 +35,7 @@ const Button: React.FC<PropTypes> = ({
       </Label>
       {loading && (
         <LoadingContainer>
-          <ActivityLoader color={theme.colors.font} />
+          <div color={theme.colors.font} />
         </LoadingContainer>
       )}
     </Container>

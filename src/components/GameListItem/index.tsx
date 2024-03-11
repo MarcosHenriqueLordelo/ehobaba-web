@@ -21,7 +21,7 @@ const GameListItem: React.FC<PropTypes> = ({
   const { theme } = useUi();
 
   return (
-    <Container onPress={() => onPress && onPress(id, babaId)}>
+    <Container onClick={() => onPress && onPress(id, babaId)}>
       <LeftContainer>
         <IconButton size={24} name="location-on" color={theme.colors.font} />
 

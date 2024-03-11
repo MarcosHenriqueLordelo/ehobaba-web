@@ -1,5 +1,4 @@
 import React from 'react';
-import { ActivityIndicator } from 'react-native';
 import useUi from '../../contexts/ui/useUi';
 import { Label, Container, LoadingContainer } from './styles';
 
@@ -34,11 +33,11 @@ const LoginButton: React.FC<PropTypes> = ({
   };
 
   return (
-    <Container disabled={disabled} onPress={onPress} color={getColor(type)}>
+    <Container disabled={disabled} onClick={onPress} color={getColor(type)}>
       {!loading && <Label disabled={loading || disabled}>{label}</Label>}
       {loading && (
         <LoadingContainer>
-          <ActivityIndicator color={theme.colors.font} size="small" />
+          <div color={theme.colors.font} />
         </LoadingContainer>
       )}
     </Container>
