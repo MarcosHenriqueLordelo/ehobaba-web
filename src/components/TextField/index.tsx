@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { LayoutAnimation, StyleSheet } from 'react-native';
-import { MaskedTextInput } from 'react-native-mask-text'; //mudar issoß
-import SelectDropdown from 'react-native-select-dropdown'; //mudar isso
+import { MaskedTextInput } from 'react-native-mask-text'; // TODO: mudar issoß
+import SelectDropdown from 'react-native-select-dropdown';// TODO:mudar isso
 import { DefaultTheme } from 'styled-components';
 import IconButton from '../IconButton'
 
@@ -27,7 +27,7 @@ interface PropTypes {
   password?: boolean;
   selectList?: { label: string; value: any }[];
   action?: {
-    name: keyof typeof IconButton.glyphMap;
+    name: IconName;
     onAction: () => void;
   };
 }

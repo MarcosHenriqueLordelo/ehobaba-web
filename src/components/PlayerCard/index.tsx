@@ -1,5 +1,5 @@
-import React from 'react';
-import { LinearGradient } from 'expo-linear-gradient';
+import React from "react";
+import { LinearGradient } from "expo-linear-gradient";
 
 import {
   AvarageContainer,
@@ -20,13 +20,13 @@ import {
   RightContainer,
   TopContainer,
   TriangleDown,
-} from './styles';
+} from "./styles";
 
-import useUi from '../../contexts/ui/useUi';
+import useUi from "../../contexts/ui/useUi";
 
-import Score from '../Score';
-import Rating from '../Rating';
-import moment from 'moment';
+import Score from "../Score";
+import Rating from "../Rating";
+import moment from "moment";
 
 interface PropTypes {
   data: Info;
@@ -50,7 +50,7 @@ const PlayerCard: React.FC<PropTypes> = ({
   const { theme, strings } = useUi();
 
   const getAge = () => {
-    const bornYear = parseInt(bornDay.split('/')[2]);
+    const bornYear = parseInt(bornDay.split("/")[2]);
     const actualYear = moment().year();
 
     const age = actualYear - bornYear;
@@ -63,10 +63,10 @@ const PlayerCard: React.FC<PropTypes> = ({
       <LinearGradient
         colors={[theme.colors.action, theme.colors.section]}
         style={{
-          width: '100%',
-          height: '100%',
+          width: "100%",
+          height: "100%",
           borderRadius: 12,
-          position: 'absolute',
+          position: "absolute",
           borderWidth: 2,
           borderColor: theme.colors.action,
         }}
@@ -74,12 +74,12 @@ const PlayerCard: React.FC<PropTypes> = ({
         end={{ x: 1, y: 1 }}
       />
       <TopContainer>
-        <PlayerImage source={{ uri: photoUrl }} resizeMode="cover" />
+        <PlayerImage src={{ uri: photoUrl }} resizeMode='cover' />
         <LeftContainer>
           <AvarageContainer>
             <Retangle>
               <RetangleBackground />
-              <AvarageLabel>{`${avarage < 10 ? '0' : ''}${Math.trunc(
+              <AvarageLabel>{`${avarage < 10 ? "0" : ""}${Math.trunc(
                 avarage
               )}`}</AvarageLabel>
             </Retangle>
@@ -88,10 +88,7 @@ const PlayerCard: React.FC<PropTypes> = ({
           <PlayerName>{name}</PlayerName>
         </LeftContainer>
         <RightContainer>
-          <Flag
-            source={{ uri: `https://countryflagsapi.com/png/${country}` }} //transformar pra scr
-            resizeMode="contain"
-          />
+          <Flag src={`https://countryflagsapi.com/png/${country}`} />
           <RatingContainer>
             <Rating rating={rating} />
           </RatingContainer>

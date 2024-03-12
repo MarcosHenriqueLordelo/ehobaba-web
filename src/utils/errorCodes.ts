@@ -1,0 +1,16 @@
+export default {
+  nameBig: '001',
+  nameShort: '002',
+  emailBadFormat: '003',
+  bornDayBadFormat: '004',
+  invalidPosition: '005',
+  invalidCountry: '006',
+  invalidUrl: '007',
+  missingField: '008',
+  permissionDenied: '009',
+  userDataNull: '010',
+  emailAlreadySent: '013',
+  emailNotFound: '014',
+  passwordCodeExpired: '015',
+  passwordCodeWrong: '016',
+};

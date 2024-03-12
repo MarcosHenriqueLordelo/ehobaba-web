@@ -1,0 +1,18 @@
+[
+  { "label": "GOL", "value": "GOL" },
+  { "label": "ZAG", "value": "ZAG" },
+  { "label": "LD", "value": "LD" },
+  { "label": "LE", "value": "LE" },
+  { "label": "VOL", "value": "VOL" },
+  { "label": "MD", "value": "MD" },
+  { "label": "ME", "value": "ME" },
+  { "label": "SA", "value": "SA" },
+  { "label": "PD", "value": "PD" },
+  { "label": "PE", "value": "PE" },
+  { "label": "ATA", "value": "ATA" },
+  { "label": "LB", "value": "LB" },
+  { "label": "ADD", "value": "ADD" },
+  { "label": "ADE", "value": "ADE" },
+  { "label": "MC", "value": "MC" },
+  { "label": "MEI", "value": "MEI" }
+]

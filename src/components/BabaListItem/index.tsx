@@ -1,4 +1,4 @@
-import Moment from 'react-moment'; //trocar pro moment ver como fazer
+import moment from 'moment'; 
 import React from 'react';
 import IconButton from '../IconButton'
 

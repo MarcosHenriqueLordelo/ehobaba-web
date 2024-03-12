@@ -22,7 +22,7 @@ const PendingRateCard: React.FC<PropTypes> = ({
   const { theme } = useUi();
 
   return (
-    <Container onPress={() => onPress && onPress(id)}>
+    <Container onClick={() => onPress && onPress(id)}>
       <TitleContainer>
         <IconButton size={24} name="location-on" color={theme.colors.font} />
         <Title>{location}</Title>

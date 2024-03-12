@@ -25,6 +25,7 @@ export const Name = styled.p`
   font-size: 20px;
   font-weight: bold;
   text-transform: capitalize;
+  max-lines: 1;
 `;
 
 export const PositionLabel = styled.p`

@@ -8,7 +8,7 @@ import useUi from '../../contexts/ui/useUi';
 
 type ItemType = {
   label: string;
-  icon: keyof typeof MaterialIcon.glyphMap;
+  icon: IconName;
 };
 
 interface PropTypes {

@@ -1,25 +1,19 @@
-import React, { useMemo } from 'react';
-import Swipeable from 'react-swipeable'; //instalei aqui isso mas nao soube aplicar
+// TODO: Refatorar componente do 0
+import React, { useMemo } from "react";
+import Swipeable from "react-swipeable";
 
-import IconButton from '../IconButton'
+import IconButton from "../IconButton";
 
-import MyImage from '../MyImage';
+import MyImage from "../MyImage";
 
-import { Container, Content, Name } from './styles';
-import useUi from '../../contexts/ui/useUi';
-import { StyleSheet } from 'react-native';
-import { DefaultTheme } from 'styled-components';
+import { Container, Content, Name } from "./styles";
+import useUi from "../../contexts/ui/useUi";
+import { DefaultTheme } from "styled-components";
 
 interface PropTypes {
   itemData: CastListItem;
   onDelete?: () => void;
 }
-
-function MyButton() {
-  const handleClick = () => {
-    // Handle button click
-  };
-
 
 const CastListItem: React.FC<PropTypes> = ({
   itemData: { name, photoUrl },
@@ -32,7 +26,7 @@ const CastListItem: React.FC<PropTypes> = ({
   const renderRightAction = () => {
     return (
       <button style={styles.deleteButtonContainer} onClick={onDelete}>
-        <IconButton name="delete" size={24} color={theme.colors.font} />
+        <IconButton name='delete' size={24} color={theme.colors.font} />
       </button>
     );
   };
@@ -68,9 +62,9 @@ const getStyles = (theme: DefaultTheme) =>
     deleteButtonContainer: {
       backgroundColor: theme.colors.error,
       width: 60,
-      height: '100%',
-      justifyContent: 'center',
-      alignItems: 'center',
+      height: "100%",
+      justifyContent: "center",
+      alignItems: "center",
     },
   });
 

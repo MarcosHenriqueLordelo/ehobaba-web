@@ -44,7 +44,7 @@ const PlayerListItem: React.FC<PropTypes> = ({
       {!onDelete ? (
         <Content>
           <LeftContainer>
-            <Name numberOfLines={1}>{name}</Name>
+            <Name numberOfLines={1}>{name}</Name> //TODO: passar para dentro do estilo o número de linhas
             <Score score={score} />
           </LeftContainer>
           <PositionLabel>{`#${index < 10 && '0'}${index}`}</PositionLabel>
