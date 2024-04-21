@@ -23,7 +23,7 @@ const RatingListItem: React.FC<PropTypes> = ({
     <Container>
       <LeftContainer>
         <RowContainer>
-          <Name numberOfLines={1}>{playerName}</Name>
+          <Name>{playerName}</Name>
           <PositionLabel>{`#${index < 10 && '0'}${index}`}</PositionLabel>
         </RowContainer>
         <RowContainer>

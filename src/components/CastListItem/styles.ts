@@ -12,6 +12,7 @@ export const Name = styled.p`
   color: ${({ theme }) => theme.colors.font};
   font-size: 17px;
   font-weight: bold;
+  max-height: calc(1.2em * 1);
   text-transform: capitalize;
   margin-left: 16px;
   flex: 1;

@@ -36,7 +36,7 @@ const CastListItem: React.FC<PropTypes> = ({
       {!onDelete ? (
         <Content>
           <MyImage size={50} rounded uri={photoUrl} />
-          <Name numberOfLines={1}>{name}</Name>
+          <Name>{name}</Name>
         </Content>
       ) : (
         <Swipeable
@@ -46,7 +46,7 @@ const CastListItem: React.FC<PropTypes> = ({
         >
           <Content>
             <MyImage size={50} rounded uri={photoUrl} />
-            <Name numberOfLines={1}>{name}</Name>
+            <Name>{name}</Name>
           </Content>
         </Swipeable>
       )}

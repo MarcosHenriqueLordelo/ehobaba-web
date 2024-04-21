@@ -27,13 +27,13 @@ export const UiProvider: React.FC<DefaultProps> = ({ children }) => {
 
   const [strings, setStrings] = useState<Strings>(defaultLanguage);
   const [theme, setTheme] = useState<DefaultTheme>(themeDark);
-  const [language, setLanguage] = useState<string>("pt-br");
+  const [language, setLanguage] = useState<string>(navigator.language || "pt-br");
   const [loading, setLoading] = useState<boolean>(false);
   const [loadingUser, setLoadingUser] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
 
   useEffect(() => {
-    //TODO:"pegar idioma do navegador" setLanguage(Localization.locale);
+    //TODO:"pegar idioma do navegador" setLanguage(Localization.locale); DONE
 
     const loadStoragedData = async () => {
       setLoading(true);

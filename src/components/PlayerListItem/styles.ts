@@ -23,6 +23,7 @@ export const LeftContainer = styled.div`
 export const Name = styled.p`
   color: ${({ theme }) => theme.colors.font};
   font-size: 20px;
+  max-height: calc(1.2em * 1);
   font-weight: bold;
   text-transform: capitalize;
   max-lines: 1;
