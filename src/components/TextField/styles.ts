@@ -26,6 +26,9 @@ export const TextInput = styled.input`
   font-size: 16px;
   font-weight: 400;
   flex: 1;
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.font};
+  }
 `;
 
 export const DropDownLabel = styled.p`

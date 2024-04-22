@@ -1,14 +1,13 @@
-// TODO: Refatorar componente do 0
-import React, { useMemo } from "react";
-import Swipeable from "react-swipeable";
+import React from "react";
 
 import IconButton from "../IconButton";
+import { MdOutlineDelete } from "react-icons/md";
 
 import MyImage from "../MyImage";
 
 import { Container, Content, Name } from "./styles";
+
 import useUi from "../../contexts/ui/useUi";
-import { DefaultTheme } from "styled-components";
 
 interface PropTypes {
   itemData: CastListItem;
@@ -21,16 +20,6 @@ const CastListItem: React.FC<PropTypes> = ({
 }) => {
   const { theme } = useUi();
 
-  const styles = useMemo(() => getStyles(theme), [theme]);
-
-  const renderRightAction = () => {
-    return (
-      <button style={styles.deleteButtonContainer} onClick={onDelete}>
-        <IconButton name='delete' size={24} color={theme.colors.font} />
-      </button>
-    );
-  };
-
   return (
     <Container>
       {!onDelete ? (
@@ -39,33 +28,20 @@ const CastListItem: React.FC<PropTypes> = ({
           <Name>{name}</Name>
         </Content>
       ) : (
-        <Swipeable
-          renderRightActions={renderRightAction}
-          overshootRight={false}
-          containerStyle={styles.swipable}
-        >
-          <Content>
-            <MyImage size={50} rounded uri={photoUrl} />
-            <Name>{name}</Name>
-          </Content>
-        </Swipeable>
+        <Content>
+          <MyImage size={50} rounded uri={photoUrl} />
+          <Name>{name}</Name>
+          <IconButton
+            size={24}
+            renderIcon={() => (
+              <MdOutlineDelete color={theme.colors.font} size={24} />
+            )}
+          />
+          //TODO: fazer botao só aparecer quando arrasta pro lado o componente
+        </Content>
       )}
     </Container>
   );
 };
-
-const getStyles = (theme: DefaultTheme) =>
-  StyleSheet.create({
-    swipable: {
-      borderRadius: 12,
-    },
-    deleteButtonContainer: {
-      backgroundColor: theme.colors.error,
-      width: 60,
-      height: "100%",
-      justifyContent: "center",
-      alignItems: "center",
-    },
-  });
 
 export default CastListItem;

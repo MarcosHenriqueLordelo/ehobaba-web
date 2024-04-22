@@ -1,20 +1,18 @@
-import React, { useMemo } from 'react';
-import { DefaultTheme } from 'styled-components';
-import { StyleSheet } from 'react-native';
-import MaterialIcon from '@expo/vector-icons/MaterialIcons';
-import { RectButton, Swipeable } from 'react-native-gesture-handler';
-
+import React from "react";
 import {
   Container,
   Content,
   LeftContainer,
   Name,
   PositionLabel,
-} from './styles';
+} from "./styles";
 
-import Score from '../Score';
+import Score from "../Score";
 
-import useUi from '../../contexts/ui/useUi';
+import useUi from "../../contexts/ui/useUi";
+
+import IconButton from "../IconButton";
+import { MdOutlineDelete } from "react-icons/md";
 
 interface PropTypes {
   itemData: ScoreBoardItem;
@@ -29,57 +27,36 @@ const PlayerListItem: React.FC<PropTypes> = ({
 }) => {
   const { theme } = useUi();
 
-  const styles = useMemo(() => getStyles(theme), [theme]);
-
-  const renderRightAction = () => {
-    return (
-      <RectButton style={styles.deleteButtonContainer} onPress={onDelete}>
-        <MaterialIcon name="delete" size={24} color={theme.colors.font} />
-      </RectButton>
-    );
-  };
-
   return (
     <Container>
       {!onDelete ? (
         <Content>
           <LeftContainer>
-            <Name>{name}</Name> //TODO: passar para dentro do estilo o número de linhas DONE
+            <Name>{name}</Name> //TODO: passar para dentro do estilo o número de
+            linhas DONE
             <Score score={score} />
           </LeftContainer>
-          <PositionLabel>{`#${index < 10 && '0'}${index}`}</PositionLabel>
+          <PositionLabel>{`#${index < 10 && "0"}${index}`}</PositionLabel>
         </Content>
       ) : (
-        <Swipeable
-          renderRightActions={renderRightAction}
-          overshootRight={false}
-          containerStyle={styles.swipable}
-        >
-          <Content>
-            <LeftContainer>
-              <Name>{name}</Name>
-              <Score score={score} />
-            </LeftContainer>
-            <PositionLabel>{`#${index < 10 && '0'}${index}`}</PositionLabel>
-          </Content>
-        </Swipeable>
+        <Content>
+          <LeftContainer>
+            <Name>{name}</Name>
+            <Score score={score} />
+          </LeftContainer>
+          <PositionLabel>{`#${index < 10 && "0"}${index}`}</PositionLabel>
+          <IconButton
+            size={24}
+            renderIcon={() => (
+              <MdOutlineDelete color={theme.colors.font} size={24} />
+            )}
+          />
+          //TODO: descobrir como fazer ele aparecer quando arrastar o componente
+          para o lado
+        </Content>
       )}
     </Container>
   );
 };
-
-const getStyles = (theme: DefaultTheme) =>
-  StyleSheet.create({
-    swipable: {
-      borderRadius: 12,
-    },
-    deleteButtonContainer: {
-      backgroundColor: theme.colors.error,
-      width: 60,
-      height: '100%',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-  });
 
 export default PlayerListItem;

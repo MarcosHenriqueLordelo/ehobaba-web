@@ -4,7 +4,11 @@ export const Container = styled.div`
   width: 80%;
   height: 500px;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.action};
+  background: linear-gradient(
+    120deg,
+    ${({ theme }) => theme.colors.action},
+    ${({ theme }) => theme.colors.action}
+  );
   border-radius: 12px;
 `;
 

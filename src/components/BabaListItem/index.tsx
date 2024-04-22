@@ -1,9 +1,10 @@
-import moment from 'moment'; 
-import React from 'react';
-import IconButton from '../IconButton'
+import moment from "moment";
+import React from "react";
 
-import useUi from '../../contexts/ui/useUi';
+import IconButton from "../IconButton";
+import { MdGroups } from "react-icons/md";
 
+import useUi from "../../contexts/ui/useUi";
 
 import {
   CastLength,
@@ -12,7 +13,7 @@ import {
   LeftContainer,
   Name,
   RightContainer,
-} from './styles';
+} from "./styles";
 
 interface PropTypes {
   itemData: BabaListItem;
@@ -26,7 +27,7 @@ const BabaListItem: React.FC<PropTypes> = ({
   const { strings, theme } = useUi();
 
   const getLastMatchDate = (): string =>
-    moment.unix(lastGameTimestamp!).format('DD/MM/YYYY');
+    moment.unix(lastGameTimestamp!).format("DD/MM/YYYY");
 
   return (
     <Container onClick={() => onPress && onPress(id)}>
@@ -37,7 +38,10 @@ const BabaListItem: React.FC<PropTypes> = ({
         )}
       </LeftContainer>
       <RightContainer>
-        <IconButton size={28} name="groups" color={theme.colors.font} />
+        <IconButton
+          size={28}
+          renderIcon={() => <MdGroups size={28} color={theme.colors.font} />}
+        />
         <CastLength>
           {castLength < 10 && 0}
           {castLength}

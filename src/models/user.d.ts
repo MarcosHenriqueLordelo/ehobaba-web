@@ -30,7 +30,7 @@ type CreateUserData = {
 };
 
 type EditUserData = {
-  photo?;
+  photo?: File;
   name?: string;
   bornDay?: string;
   position?: Position;

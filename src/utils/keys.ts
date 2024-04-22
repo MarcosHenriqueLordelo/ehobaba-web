@@ -1,21 +1,7 @@
-import {
-  EXPO_CLIENT_ID_LOCAL,
-  ANDROID_CLIENT_ID_LOCAL,
-  API_LOCAL,
-  FACEBOOK_APP_ID_LOCAL,
-  FACEBOOK_CLIENT_TOKEN_LOCAL,
-  IOS_CLIENT_ID_LOCAL,
-  REMBG_API_LOCAL,
-} from '@env';
-
-export const ANDROID_CLIENT_ID =
-  process.env.ANDROID_CLIENT_ID || ANDROID_CLIENT_ID_LOCAL;
-export const API = process.env.API || API_LOCAL;
-export const EXPO_CLIENT_ID =
-  process.env.EXPO_CLIENT_ID || EXPO_CLIENT_ID_LOCAL;
-export const FACEBOOK_APP_ID =
-  process.env.FACEBOOK_APP_ID || FACEBOOK_APP_ID_LOCAL;
-export const FACEBOOK_CLIENT_TOKEN =
-  process.env.FACEBOOK_CLIENT_TOKEN || FACEBOOK_CLIENT_TOKEN_LOCAL;
-export const IOS_CLIENT_ID = process.env.IOS_CLIENT_ID || IOS_CLIENT_ID_LOCAL;
-export const REMBG_API = process.env.REMBG_API || REMBG_API_LOCAL;
+export const ANDROID_CLIENT_ID = process.env.ANDROID_CLIENT_ID;
+export const API = process.env.API;
+export const EXPO_CLIENT_ID = process.env.EXPO_CLIENT_ID;
+export const FACEBOOK_APP_ID = process.env.FACEBOOK_APP_ID;
+export const FACEBOOK_CLIENT_TOKEN = process.env.FACEBOOK_CLIENT_TOKEN;
+export const IOS_CLIENT_ID = process.env.IOS_CLIENT_ID;
+export const REMBG_API = process.env.REMBG_API;

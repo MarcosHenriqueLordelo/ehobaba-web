@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
-import IconButton from '../IconButton'
+import React, { useState } from "react";
+import IconButton from "../IconButton";
 
-import { LayoutAnimation } from 'react-native';
-
-import { Container, IconContainer, ItemContainer, ItemLabel } from './styles';
-import useUi from '../../contexts/ui/useUi';
+import { Container, IconContainer, ItemContainer, ItemLabel } from "./styles";
+import useUi from "../../contexts/ui/useUi";
 
 type ItemType = {
   label: string;
-  icon: IconName;
+  renderIcon: () => JSX.Element;
 };
 
 interface PropTypes {
@@ -34,8 +32,6 @@ const NavigationBar: React.FC<PropTypes> = ({
     isSelected(index) && <ItemLabel>{label}</ItemLabel>;
 
   const handlePressed = (index: number) => {
-    LayoutAnimation.easeInEaseOut();
-
     setSelected(index);
 
     if (onPressItem) onPressItem(index);
@@ -43,12 +39,11 @@ const NavigationBar: React.FC<PropTypes> = ({
 
   const renderItems = () =>
     items.map((item, index) => (
-      <ItemContainer onPress={() => handlePressed(index)} key={index}>
+      <ItemContainer onClick={() => handlePressed(index)} key={index}>
         <IconContainer selected={isSelected(index)}>
           <IconButton
-            name={item.icon}
+            renderIcon={item.renderIcon}
             size={isSelected(index) ? 26 : 24}
-            color={getItemColor(index)}
           />
         </IconContainer>
 

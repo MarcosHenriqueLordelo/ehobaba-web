@@ -9,7 +9,7 @@ export const Container = styled.div`
   justify-content: space-between;
 `;
 
-export const Label = styled.p`
+export const Label = styled.span`
   max-lines: 1;
   line-height: 28px;
   font-size: 22px;

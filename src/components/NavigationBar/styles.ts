@@ -37,4 +37,5 @@ export const IconContainer = styled.div<ItemProps>`
     `border-radius:50px;
      background-color: ${theme.colors.background};`}
   padding: 8px;
+  transition: all 1s;
 `;

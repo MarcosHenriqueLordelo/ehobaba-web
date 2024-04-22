@@ -1,5 +1,7 @@
-import React from 'react';
-import IconButton from '../IconButton'
+import React from "react";
+
+import IconButton from "../IconButton";
+import { MdLocationOn } from "react-icons/md";
 
 import {
   BottomContainer,
@@ -8,10 +10,10 @@ import {
   Subtitle,
   Title,
   TitleContainer,
-} from './styles';
-import useUi from '../../contexts/ui/useUi';
-import Score from '../Score';
-import moment from 'moment';
+} from "./styles";
+import useUi from "../../contexts/ui/useUi";
+import Score from "../Score";
+import moment from "moment";
 
 interface PropTypes {
   cardData: {
@@ -32,10 +34,15 @@ const GameItemCard: React.FC<PropTypes> = ({
   return (
     <Container onClick={() => onPress && onPress(id)}>
       <HeaderContainer>
-        <IconButton size={24} name="location-on" color={theme.colors.font} />
+        <IconButton
+          size={24}
+          renderIcon={() => (
+            <MdLocationOn color={theme.colors.font} size={24} />
+          )}
+        />
         <TitleContainer>
           <Title>{location}</Title>
-          <Subtitle>{moment.unix(timestamp).format('DD/MM/YYYY')}</Subtitle>
+          <Subtitle>{moment.unix(timestamp).format("DD/MM/YYYY")}</Subtitle>
         </TitleContainer>
       </HeaderContainer>
       {score && (

@@ -1,28 +1,32 @@
-import { StyleSheet } from 'react-native';
-import { DefaultTheme } from 'styled-components/native';
+import { styled } from "styled-components";
 
-const styles = (theme: DefaultTheme) =>
-  StyleSheet.create({
-    snackBar: {
-      position: 'absolute',
-      width: '100%',
-    },
-    content: {
-      flex: 1,
-      flexDirection: 'row',
-      marginHorizontal: 16,
-      marginVertical: 8,
-      paddingHorizontal: 16,
-      paddingVertical: 8,
-      backgroundColor: theme.colors.error,
-      borderRadius: 10,
-      alignItems: 'center',
-    },
-    message: {
-      color: '#FFFFFF',
-      fontSize: 16,
-      marginLeft: 16,
-    },
-  });
+interface ContainerProps {
+  visible: boolean;
+}
 
-export default styles;
+export const Container = styled.div<ContainerProps>`
+  position: absolute;
+  width: "100%";
+  bottom: 16px;
+  left: 16px;
+  transition: all 0.2s;
+  z-index: -1000;
+
+  ${({ visible }) => visible && "z-index:1000;"}
+`;
+
+export const Content = styled.div`
+  flex: 1;
+  flex-direction: row;
+  margin: 8px 10px;
+  padding: 8px 0px;
+  background-color: ${({ theme }) => theme.colors.error};
+  border-radius: 10px;
+  align-items: center;
+`;
+
+export const Message = styled.span`
+  color: #ffffff;
+  font-size: 16px;
+  margin-left: 16px;
+`;

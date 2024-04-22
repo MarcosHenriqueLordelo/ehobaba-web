@@ -2,14 +2,15 @@ import React from "react";
 
 import { Container, Label, LeftContainer, RightContainer } from "./styles";
 
-import useUi from '../../contexts/ui/useUi';
+import useUi from "../../contexts/ui/useUi";
 
-import IconButton from '../IconButton'
+import IconButton from "../IconButton";
+import { MdArrowBack } from "react-icons/md";
 
 interface PropTypes {
   title?: string;
-  primaryAction?: IconName;
-  secondaryAction?: IconName;
+  primaryAction?: () => JSX.Element;
+  secondaryAction?: () => JSX.Element;
   onPrimaryAction?: () => void;
   onSecondaryAction?: () => void;
   onBack?: () => void;
@@ -32,8 +33,9 @@ const AppBar: React.FC<PropTypes> = ({
           <IconButton
             onPress={onBack}
             size={24}
-            color={theme.colors.action}
-            name='arrow-back'
+            renderIcon={() => (
+              <MdArrowBack size={24} color={theme.colors.action} />
+            )}
           />
         )}
         <Label>{title}</Label>
@@ -43,16 +45,14 @@ const AppBar: React.FC<PropTypes> = ({
           <IconButton
             onPress={onPrimaryAction}
             size={24}
-            color={theme.colors.action}
-            name={primaryAction}
+            renderIcon={primaryAction}
           />
         )}
         {secondaryAction && (
           <IconButton
             onPress={onSecondaryAction}
             size={24}
-            color={theme.colors.action}
-            name={secondaryAction}
+            renderIcon={secondaryAction}
           />
         )}
       </RightContainer>

@@ -25,9 +25,9 @@ const MyImage: React.FC<PropTypes> = ({ size, rounded, uri }) => {
 
   return (
     <Img
-      onLoadEnd={() => setShowDefault(false)}
+      onLoadedData={() => setShowDefault(false)}
       onError={() => setError(true)}
-      source={showDefault || error ? defaultImg : { uri: imageUri }}
+      src={showDefault || error ? defaultImg : imageUri}
       size={size}
       rounded={rounded}
     />

@@ -1,7 +1,8 @@
-import React from 'react';
-import moment from 'moment';
+import React from "react";
+import moment from "moment";
 
-import IconButton from '../IconButton'
+import IconButton from "../IconButton";
+import { MdOutlineDelete } from "react-icons/md";
 
 import {
   Container,
@@ -9,8 +10,8 @@ import {
   Info,
   LeftContainer,
   Name,
-} from './styles';
-import useUi from '../../contexts/ui/useUi';
+} from "./styles";
+import useUi from "../../contexts/ui/useUi";
 
 interface PropTypes {
   itemData: EventListItem;
@@ -24,7 +25,7 @@ const EventListItem: React.FC<PropTypes> = ({
   showDelete,
 }) => {
   const { theme } = useUi();
-  const getInfoLabel = () => moment.unix(timestamp).format('HH:mm');
+  const getInfoLabel = () => moment.unix(timestamp).format("HH:mm");
 
   return (
     <Container>
@@ -34,7 +35,12 @@ const EventListItem: React.FC<PropTypes> = ({
       </LeftContainer>
       {onDelete && showDelete && (
         <DeleteContainer onClick={() => onDelete(id)}>
-          <IconButton name="delete" size={24} color={theme.colors.action} />
+          <IconButton
+            size={24}
+            renderIcon={() => (
+              <MdOutlineDelete color={theme.colors.font} size={24} />
+            )}
+          />
         </DeleteContainer>
       )}
     </Container>

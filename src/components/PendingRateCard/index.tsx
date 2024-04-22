@@ -1,9 +1,11 @@
-import React from 'react';
-import IconButton from '../IconButton'
+import React from "react";
 
-import { Container, Subtitle, Title, TitleContainer } from './styles';
-import useUi from '../../contexts/ui/useUi';
-import moment from 'moment';
+import IconButton from "../IconButton";
+import { MdLocationOn } from "react-icons/md";
+
+import { Container, Subtitle, Title, TitleContainer } from "./styles";
+import useUi from "../../contexts/ui/useUi";
+import moment from "moment";
 
 interface PropTypes {
   cardData: {
@@ -24,10 +26,15 @@ const PendingRateCard: React.FC<PropTypes> = ({
   return (
     <Container onClick={() => onPress && onPress(id)}>
       <TitleContainer>
-        <IconButton size={24} name="location-on" color={theme.colors.font} />
+        <IconButton
+          size={24}
+          renderIcon={() => (
+            <MdLocationOn color={theme.colors.font} size={24} />
+          )}
+        />
         <Title>{location}</Title>
       </TitleContainer>
-      <Subtitle>{moment(timestamp).format('DD/MM/YYYY')}</Subtitle>
+      <Subtitle>{moment(timestamp).format("DD/MM/YYYY")}</Subtitle>
     </Container>
   );
 };

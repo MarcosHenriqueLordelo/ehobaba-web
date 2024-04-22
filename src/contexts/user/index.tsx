@@ -1,7 +1,5 @@
 import React, { createContext, useState, useEffect, useCallback } from "react";
 
-import { Platform } from "react-native";
-
 import { babaApi, userApi } from "../../services";
 import api from "../../services/api";
 import errorCodes from "../../utils/errorCodes";
@@ -59,9 +57,9 @@ export const UserProvider: React.FC<DefaultProps> = ({ children }) => {
 
   const loadRescources = async () => {
     setLoadingUser(true);
-    const token =  localStorage.getItem(`${tokenKey}:authToken`);
-    const uid =  localStorage.getItem(`${tokenKey}:uid`);
-    const email =  localStorage.getItem(`${tokenKey}:email`);
+    const token = localStorage.getItem(`${tokenKey}:authToken`);
+    const uid = localStorage.getItem(`${tokenKey}:uid`);
+    const email = localStorage.getItem(`${tokenKey}:email`);
 
     if (uid !== null && uid !== "null") setUid(uid);
     if (email !== null && email !== "null") setEmail(email);
@@ -102,9 +100,9 @@ export const UserProvider: React.FC<DefaultProps> = ({ children }) => {
         data: { token, uid },
       } = await userApi.loginEmail(reqData);
 
-       localStorage.setItem(`${tokenKey}:authToken`, token);
-       localStorage.setItem(`${tokenKey}:uid`, uid);
-       localStorage.setItem(`${tokenKey}:email`, reqData.email);
+      localStorage.setItem(`${tokenKey}:authToken`, token);
+      localStorage.setItem(`${tokenKey}:uid`, uid);
+      localStorage.setItem(`${tokenKey}:email`, reqData.email);
 
       if (token && uid) {
         setLoadingUser(true);
@@ -137,9 +135,9 @@ export const UserProvider: React.FC<DefaultProps> = ({ children }) => {
     setUid(undefined);
     setEmail(undefined);
 
-     localStorage.setItem(`${tokenKey}:authToken`, "null");
-     localStorage.setItem(`${tokenKey}:uid`, "null");
-     localStorage.setItem(`${tokenKey}:email`, "null");
+    localStorage.setItem(`${tokenKey}:authToken`, "null");
+    localStorage.setItem(`${tokenKey}:uid`, "null");
+    localStorage.setItem(`${tokenKey}:email`, "null");
 
     setLoadingUser(false);
   };
@@ -186,15 +184,7 @@ export const UserProvider: React.FC<DefaultProps> = ({ children }) => {
 
       const form = new FormData();
 
-      //@ts-ignore
-      form.append("image", {
-        name: "profile.jpg",
-        type: "image/jpg",
-        uri:
-          Platform.OS === "android"
-            ? photo.uri
-            : photo.uri.replace("file:/", ""),
-      });
+      form.append("image", photo, "profile.jpg");
 
       const { data: photoUrl } = await userApi.uploadImage(form);
 
@@ -231,15 +221,7 @@ export const UserProvider: React.FC<DefaultProps> = ({ children }) => {
       if (photo) {
         const form = new FormData();
 
-        //@ts-ignore
-        form.append("file", {
-          name: "profile.jpg",
-          type: "image/jpg",
-          uri:
-            Platform.OS === "android"
-              ? photo.uri
-              : photo.uri.replace("file:/", ""),
-        });
+        form.append("image", photo, "profile.jpg");
 
         const { data } = await userApi.uploadImage(form);
 

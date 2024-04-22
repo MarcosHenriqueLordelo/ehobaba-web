@@ -1,8 +1,10 @@
-import React from 'react';
-import { Container, LeftContainer, Location, Date } from './styles';
-import useUi from '../../contexts/ui/useUi';
-import moment from 'moment';
-import IconButton from '../IconButton'
+import React from "react";
+import { Container, LeftContainer, Location, Date } from "./styles";
+import useUi from "../../contexts/ui/useUi";
+import moment from "moment";
+
+import IconButton from "../IconButton";
+import { MdLocationOn } from "react-icons/md";
 
 interface PropTypes {
   itemData: {
@@ -23,11 +25,16 @@ const GameListItem: React.FC<PropTypes> = ({
   return (
     <Container onClick={() => onPress && onPress(id, babaId)}>
       <LeftContainer>
-        <IconButton size={24} name="location-on" color={theme.colors.font} />
+        <IconButton
+          size={24}
+          renderIcon={() => (
+            <MdLocationOn color={theme.colors.font} size={24} />
+          )}
+        />
 
         <Location>{location}</Location>
       </LeftContainer>
-      <Date>{moment.unix(timestamp).format('DD/MM/YYYY')}</Date>
+      <Date>{moment.unix(timestamp).format("DD/MM/YYYY")}</Date>
     </Container>
   );
 };

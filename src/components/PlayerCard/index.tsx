@@ -1,5 +1,4 @@
 import React from "react";
-import { LinearGradient } from "expo-linear-gradient";
 
 import {
   AvarageContainer,
@@ -60,21 +59,8 @@ const PlayerCard: React.FC<PropTypes> = ({
 
   return (
     <Container ref={captureRef}>
-      <LinearGradient
-        colors={[theme.colors.action, theme.colors.section]}
-        style={{
-          width: "100%",
-          height: "100%",
-          borderRadius: 12,
-          position: "absolute",
-          borderWidth: 2,
-          borderColor: theme.colors.action,
-        }}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-      />
       <TopContainer>
-        <PlayerImage src={{ uri: photoUrl }} resizeMode='cover' />
+        <PlayerImage src={photoUrl} />
         <LeftContainer>
           <AvarageContainer>
             <Retangle>
