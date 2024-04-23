@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
   scrollbar-width: thin;
+  background-color: #353941; 
+  overscroll-behavior: none;
+
 
   font-family: "Roboto Mono";
   font-size: 62.5%;

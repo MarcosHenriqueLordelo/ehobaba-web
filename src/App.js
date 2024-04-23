@@ -7,7 +7,7 @@ import { Md10K } from "react-icons/md";
 function App() {
   return (
     <div
-      style={{ width: "100vw", height: "100vh", backgroundColor: "#353941" }}
+      style={{ width: "100vw", height: "100vh", backgroundColor: "#353941",  overflowX: "hidden", overscrollBehaviorY: "contain" }}
     >
       <AppBar
         title='teste'
