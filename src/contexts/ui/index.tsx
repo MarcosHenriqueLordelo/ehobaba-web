@@ -33,7 +33,7 @@ export const UiProvider: React.FC<DefaultProps> = ({ children }) => {
   const [errors, setErrors] = useState<Errors>({});
 
   useEffect(() => {
-    //TODO:"pegar idioma do navegador" setLanguage(Localization.locale); DONE
+  
 
     const loadStoragedData = async () => {
       setLoading(true);

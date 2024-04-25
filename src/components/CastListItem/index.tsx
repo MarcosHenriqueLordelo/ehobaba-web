@@ -37,7 +37,6 @@ const CastListItem: React.FC<PropTypes> = ({
               <MdOutlineDelete color={theme.colors.font} size={24} />
             )}
           />
-          //TODO: fazer botao só aparecer quando arrasta pro lado o componente
         </Content>
       )}
     </Container>
