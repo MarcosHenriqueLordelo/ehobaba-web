@@ -9,11 +9,13 @@ export const Container = styled.button`
 `;
 
 export const TopContainer = styled.div`
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
 `;
 
 export const HeaderContainer = styled.div`
+  display: flex;
   flex-direction: row;
   align-items: flex-start;
 `;

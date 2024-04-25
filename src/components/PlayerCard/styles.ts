@@ -10,6 +10,8 @@ export const Container = styled.div`
     ${({ theme }) => theme.colors.action}
   );
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const TopContainer = styled.p`
@@ -27,6 +29,8 @@ export const BottomContainer = styled.p`
   height: 110px;
   justify-content: space-between;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const AvarageContainer = styled.div``;
@@ -37,6 +41,8 @@ export const Retangle = styled.div`
   justify-content: flex-end;
   align-items: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const RetangleBackground = styled.div`
@@ -73,21 +79,28 @@ export const LeftContainer = styled.div`
   flex: 1;
   justify-content: space-between;
   padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const RightContainer = styled.div`
   flex: 1;
   align-items: flex-end;
   padding-top: 8px;
+  display: flex;
 `;
 
 export const MidRowContainer = styled.div`
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
+  display: flex;
 `;
 
-export const MidInfoContainer = styled.div``;
+export const MidInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const MidlTitle = styled.p`
   font-size: 18px;
@@ -121,6 +134,8 @@ export const Flag = styled.img`
 export const RatingContainer = styled.div`
   flex: 1;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const PlayerImage = styled.img`

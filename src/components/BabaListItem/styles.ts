@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
+  display: flex;
   background-color: ${({ theme }) => theme.colors.section};
   flex-direction: row;
   justify-content: space-between;
@@ -12,6 +13,7 @@ export const Container = styled.button`
 `;
 
 export const LeftContainer = styled.div`
+  display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
@@ -30,6 +32,7 @@ export const LastMatch = styled.p`
 `;
 
 export const RightContainer = styled.div`
+  display: flex;
   flex-direction: row;
 `;
 

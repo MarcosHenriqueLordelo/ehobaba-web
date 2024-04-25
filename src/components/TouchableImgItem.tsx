@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components/native';
-import useUi from '../contexts/ui/useUi';
+import React from "react";
+import styled from "styled-components";
+import useUi from "../contexts/ui/useUi";
 
 interface PropTypes {
   selected?: boolean;
@@ -12,8 +12,8 @@ interface ImageProps {
   selected?: boolean;
 }
 
-const Container = styled.TouchableOpacity``;
-const PlayerImg = styled.Image<ImageProps>`
+const Container = styled.div``;
+const PlayerImg = styled.img<ImageProps>`
   width: 35px;
   height: 35px;
   border-radius: 100px;
@@ -29,13 +29,13 @@ const TouchableImgItem: React.FC<PropTypes> = ({
   const { theme } = useUi();
 
   return (
-    <Container onPress={onPress}>
+    <Container onClick={onPress}>
       <PlayerImg
         style={
           selected ? { borderColor: theme.colors.action, borderWidth: 2 } : {}
         }
         selected={selected}
-        source={{ uri: player.photoUrl }}
+        src={player.photoUrl}
       />
     </Container>
   );

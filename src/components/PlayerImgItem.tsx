@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components/native';
+import styled from 'styled-components';
 import MyImage from './MyImage';
 
 interface PropTypes {
@@ -7,12 +7,12 @@ interface PropTypes {
   onPress?: () => void;
 }
 
-const Container = styled.TouchableOpacity`
+const Container = styled.div`
   align-items: center;
   margin-right: 16px;
 `;
 
-const PlayerName = styled.Text`
+const PlayerName = styled.span`
   text-transform: capitalize;
   color: ${({ theme }) => theme.colors.font};
   margin-top: 6px;
@@ -22,7 +22,7 @@ const PlayerName = styled.Text`
 
 const PlayerImgItem: React.FC<PropTypes> = ({ data, onPress }) => {
   return (
-    <Container onPress={onPress}>
+    <Container onClick={onPress}>
       <MyImage size={60} rounded uri={data.photoUrl} />
       <PlayerName>{data.name}</PlayerName>
     </Container>

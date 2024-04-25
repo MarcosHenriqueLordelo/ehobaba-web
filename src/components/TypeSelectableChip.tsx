@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components/native';
+import styled from 'styled-components';
 
 interface PropTypes {
   selected?: boolean;
@@ -11,7 +11,7 @@ interface ContainerProps {
   selected?: boolean;
 }
 
-const Container = styled.TouchableOpacity<ContainerProps>`
+const Container = styled.div<ContainerProps>`
   height: 32px;
   padding: 0px 16px;
   align-items: center;
@@ -20,7 +20,7 @@ const Container = styled.TouchableOpacity<ContainerProps>`
   ${({ theme, selected }) =>
     selected && `background-color:${theme.colors.action}`};
 `;
-const Label = styled.Text`
+const Label = styled.span`
   color: ${({ theme }) => theme.colors.font};
   font-size: 14px;
   font-weight: 500;
@@ -33,7 +33,7 @@ const TypeSelectableChip: React.FC<PropTypes> = ({
   label,
 }) => {
   return (
-    <Container selected={selected} onPress={onPress}>
+    <Container selected={selected} onClick={onPress}>
       <Label>{label}</Label>
     </Container>
   );

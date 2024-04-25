@@ -8,4 +8,10 @@ export default {
     font: '#EEEEEE',
     error: '#DE5246',
   },
+
+  fonts: {
+    small: "1.2rem",
+    medium: "1.8rem",
+    larger: "2.1rem",
+  },
 };

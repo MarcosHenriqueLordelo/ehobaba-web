@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components/native';
+import styled from 'styled-components';
 
-const NoDataContainer = styled.View``;
+const NoDataContainer = styled.div``;
 
-const NoDataLabel = styled.Text`
+const NoDataLabel = styled.span`
   text-align: center;
   color: ${({ theme }) => theme.colors.font};
 `;

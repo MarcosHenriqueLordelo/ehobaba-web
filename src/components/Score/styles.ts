@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   flex-direction: row;
+  display: flex;
 `;
 
 interface ItemProps {
@@ -19,14 +20,14 @@ export const ItemContainer = styled.div<ItemProps>`
 `;
 
 export const ItemLabel = styled.p<LabelProps>`
-  color: ${({ theme, white }) => (white ? '#FFFFFF' : theme.colors.font)};
+  color: ${({ theme, white }) => (white ? "#FFFFFF" : theme.colors.font)};
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 400;
 `;
 
 export const ItemValue = styled.p<LabelProps>`
-  color: ${({ theme, white }) => (white ? '#FFFFFF' : theme.colors.font)};
+  color: ${({ theme, white }) => (white ? "#FFFFFF" : theme.colors.font)};
   font-size: 13px;
   font-weight: bold;
 `;

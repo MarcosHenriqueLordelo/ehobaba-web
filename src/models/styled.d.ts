@@ -1,6 +1,6 @@
-import 'styled-components/native'
+import "styled-components";
 
-declare module 'styled-components/native' {
+declare module "styled-components" {
   export interface DefaultTheme {
     title: string;
 
@@ -10,6 +10,12 @@ declare module 'styled-components/native' {
       action: string;
       font: string;
       error: string;
+    };
+
+    fonts: {
+      small: string;
+      medium: string;
+      larger: string;
     };
   }
 }
