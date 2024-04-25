@@ -1,4 +1,4 @@
-import styled, { DefaultTheme } from 'styled-components/native';
+import styled, { DefaultTheme } from "styled-components";
 
 interface ContainerProps {
   dark?: boolean;
@@ -27,7 +27,7 @@ const getLabelColor = (theme: DefaultTheme, labelAction?: boolean): string => {
   return '#FFFFFF';
 };
 
-export const Container = styled.TouchableOpacity<ContainerProps>`
+export const Container = styled.button<ContainerProps>`
   border-radius: 10px;
   background-color: ${({ theme, dark, transparent }) =>
     getBackgroundColor(theme, dark, transparent)};
@@ -37,7 +37,7 @@ export const Container = styled.TouchableOpacity<ContainerProps>`
   ${({ transparent }) => transparent && `background-color: transparent;`};
 `;
 
-export const Label = styled.Text<ContainerProps>`
+export const Label = styled.p<ContainerProps>`
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
@@ -46,7 +46,7 @@ export const Label = styled.Text<ContainerProps>`
   ${({ disabled }) => disabled && `opacity: 0.3;`}
 `;
 
-export const LoadingContainer = styled.View`
+export const LoadingContainer = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -56,6 +56,6 @@ export const LoadingContainer = styled.View`
   justify-content: center;
 `;
 
-export const ActivityLoader = styled.View`
+export const ActivityLoader = styled.div`
     size: small; 
 `;

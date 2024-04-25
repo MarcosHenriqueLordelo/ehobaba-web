@@ -3,7 +3,7 @@ import useUi from '../../contexts/ui/useUi';
 import { Container, Label, LoadingContainer } from './styles';
 
 interface PropTypes {
-  onPress?: () => void;
+  onClick?: () => void;
   label: string;
   dark?: boolean;
   labelAction?: boolean;
@@ -13,7 +13,7 @@ interface PropTypes {
 }
 
 const Button: React.FC<PropTypes> = ({
-  onPress,
+  onClick,
   label,
   dark,
   labelAction,
@@ -26,7 +26,7 @@ const Button: React.FC<PropTypes> = ({
   return (
     <Container
       dark={dark}
-      onPress={onPress}
+      onClick={onClick}
       transparent={transparent}
       disabled={loading || disabled}
     >
