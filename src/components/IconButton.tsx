@@ -4,7 +4,7 @@ interface PropTypes {
   size: number;
   containerSize?: number;
   onPress?: () => void;
-  style?: any;
+  style?: React.CSSProperties;
   renderIcon: () => JSX.Element;
 }
 

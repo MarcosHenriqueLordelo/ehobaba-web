@@ -36,6 +36,7 @@ const AppBar: React.FC<PropTypes> = ({
             renderIcon={() => (
               <MdArrowBack size={24} color={theme.colors.action} />
             )}
+            style={{ marginRight: 16 }}
           />
         )}
         <Label>{title}</Label>
@@ -46,6 +47,7 @@ const AppBar: React.FC<PropTypes> = ({
             onPress={onPrimaryAction}
             size={24}
             renderIcon={primaryAction}
+            style={{ paddingLeft: 24 }}
           />
         )}
         {secondaryAction && (
@@ -53,6 +55,7 @@ const AppBar: React.FC<PropTypes> = ({
             onPress={onSecondaryAction}
             size={24}
             renderIcon={secondaryAction}
+            style={{ paddingLeft: 24 }}
           />
         )}
       </RightContainer>

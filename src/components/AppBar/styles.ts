@@ -2,12 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  height: 64px;
-  padding: 0px 16px;
   flex-direction: row;
   align-items: center;
-  width: 100%;
   justify-content: space-between;
+  height: 64px;
+  width: 100%;
 `;
 
 export const Label = styled.span`
@@ -19,10 +18,14 @@ export const Label = styled.span`
 `;
 
 export const LeftContainer = styled.div`
+  display: flex;
   flex-direction: row;
   align-items: center;
+  padding-left: 16px;
 `;
 
 export const RightContainer = styled.div`
+  display: flex;
   flex-direction: row-reverse;
+  padding-right: 16px;
 `;

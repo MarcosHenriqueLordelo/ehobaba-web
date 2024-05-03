@@ -33,10 +33,10 @@ function Home() {
         backgroundColor: "#353941",
         overflowX: "hidden",
         overscrollBehaviorY: "contain",
-        padding: 16,
       }}
     >
       <AppBar
+        onBack={() => console.log("")}
         title='teste'
         primaryAction={() => <MdArrowBack size={24} color='white' />}
         onPrimaryAction={() => console.log("teste")}
@@ -104,9 +104,18 @@ function Home() {
       <div style={{ height: 10 }} />
       <NavigationBar
         items={[
-          { label: "Aba 1", renderIcon: () => <MdLocationOn size={24} color='#FFF' /> },
-          { label: "Aba 2", renderIcon: () => <MdLocationOn size={24} color='#FFF' /> },
-          { label: "Aba 3", renderIcon: () => <MdLocationOn size={24} color='#FFF' /> },
+          {
+            label: "Aba 1",
+            renderIcon: () => <MdLocationOn size={24} color='#FFF' />,
+          },
+          {
+            label: "Aba 2",
+            renderIcon: () => <MdLocationOn size={24} color='#FFF' />,
+          },
+          {
+            label: "Aba 3",
+            renderIcon: () => <MdLocationOn size={24} color='#FFF' />,
+          },
         ]}
         defaultItem={0}
       />
