@@ -3,49 +3,56 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 80%;
   height: 500px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   background: linear-gradient(
     120deg,
     ${({ theme }) => theme.colors.action},
-    ${({ theme }) => theme.colors.action}
+    ${({ theme }) => theme.colors.background} 70%
   );
   border-radius: 12px;
-  display: flex;
-  flex-direction: column;
+  border: 2px solid ${({ theme }) => theme.colors.action};
 `;
 
-export const TopContainer = styled.p`
+export const TopContainer = styled.div`
+  display: flex;
   flex: 1;
-  width: 90%;
   flex-direction: row;
   position: relative;
+  width: 90%;
 `;
 
-export const BottomContainer = styled.p`
+export const BottomContainer = styled.div`
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   padding: 8px;
   width: 90%;
   border-top-width: 1px;
   border-color: ${({ theme }) => theme.colors.font};
   height: 110px;
-  justify-content: space-between;
-  align-items: center;
+`;
+
+export const AvarageContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-export const AvarageContainer = styled.div``;
 
 export const Retangle = styled.div`
   width: 70px;
   height: 60px;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   position: relative;
-  display: flex;
-  flex-direction: column;
 `;
 
 export const RetangleBackground = styled.div`
+  display: flex;
+  flex-direction: column;
   position: absolute;
   background-color: ${({ theme }) => theme.colors.action};
   width: 100%;
@@ -54,6 +61,8 @@ export const RetangleBackground = styled.div`
 `;
 
 export const TriangleDown = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 0;
   height: 0;
   background-color: transparent;
@@ -68,7 +77,7 @@ export const TriangleDown = styled.div`
   opacity: 0.6;
 `;
 
-export const AvarageLabel = styled.p`
+export const AvarageLabel = styled.span`
   font-size: 40px;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.font};
@@ -76,25 +85,26 @@ export const AvarageLabel = styled.p`
 `;
 
 export const LeftContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   flex: 1;
   justify-content: space-between;
   padding-bottom: 8px;
-  display: flex;
-  flex-direction: column;
 `;
 
 export const RightContainer = styled.div`
-  flex: 1;
-  align-items: flex-end;
-  padding-top: 8px;
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 1;
+  padding-top: 8px;
 `;
 
 export const MidRowContainer = styled.div`
-  width: 100%;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
-  display: flex;
+  width: 100%;
 `;
 
 export const MidInfoContainer = styled.div`
@@ -102,14 +112,15 @@ export const MidInfoContainer = styled.div`
   flex-direction: column;
 `;
 
-export const MidlTitle = styled.p`
+export const MidlTitle = styled.span`
   font-size: 18px;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.font};
   flex-wrap: wrap;
+  display: flex;
 `;
 
-export const MidlValue = styled.p`
+export const MidlValue = styled.span`
   font-size: 16px;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.font};
@@ -117,25 +128,29 @@ export const MidlValue = styled.p`
   align-self: center;
 `;
 
-export const PlayerName = styled.p`
+export const PlayerName = styled.span`
   line-height: 36px;
   font-size: 30px;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.font};
   flex-wrap: wrap;
+  z-index: 1;
 `;
 
 export const Flag = styled.img`
-  width: 50px;
+  width: 60px;
   height: 35px;
-  border-radius: 100px;
+  border-radius: 50px;
+  object-fit: cover;
+  z-index: 1;
 `;
 
 export const RatingContainer = styled.div`
-  flex: 1;
-  justify-content: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  z-index: 1;
 `;
 
 export const PlayerImage = styled.img`
@@ -143,4 +158,5 @@ export const PlayerImage = styled.img`
   height: 90%;
   position: absolute;
   bottom: 0px;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.font};
 `;

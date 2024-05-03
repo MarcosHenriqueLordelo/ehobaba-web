@@ -64,17 +64,15 @@ const PlayerCard: React.FC<PropTypes> = ({
         <LeftContainer>
           <AvarageContainer>
             <Retangle>
-              <RetangleBackground />
               <AvarageLabel>{`${avarage < 10 ? "0" : ""}${Math.trunc(
                 avarage
               )}`}</AvarageLabel>
             </Retangle>
-            <TriangleDown />
           </AvarageContainer>
           <PlayerName>{name}</PlayerName>
         </LeftContainer>
         <RightContainer>
-          <Flag src={`https://countryflagsapi.com/png/${country}`} />
+          <Flag src={`https://flagcdn.com/w160/${country}.png`} />
           <RatingContainer>
             <Rating rating={rating} />
           </RatingContainer>

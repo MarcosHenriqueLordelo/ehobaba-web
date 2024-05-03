@@ -134,7 +134,7 @@ function Home() {
         data={{
           avarage: 14,
           bornDay: "16/11/1999",
-          country: "BRA",
+          country: "br",
           games: 14,
           name: "Marcos Marques",
           photoUrl:
