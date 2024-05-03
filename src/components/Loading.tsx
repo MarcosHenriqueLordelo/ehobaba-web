@@ -9,18 +9,15 @@ const rotate = keyframes`
     }
 `;
 
-const Loader = styled.div`
-  width: 50px;
-  padding: 8px;
-  aspect-ratio: 1;
+export const Loader = styled.div`
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-bottom-color: transparent;
   border-radius: 50%;
-  background: ${({ theme }) => theme.colors.action};
-  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
-  -webkit-mask: var(--_m);
-  mask: var(--_m);
-  -webkit-mask-composite: source-out;
-  mask-composite: subtract;
-  animation: ${rotate} 1s infinite linear;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: ${rotate} 1s linear infinite;
 `;
 
 const Loading: React.FC = () => {
@@ -29,7 +26,9 @@ const Loading: React.FC = () => {
   return (
     <div
       style={{
-        flex: 1,
+        display: "flex",
+        width: "100vw",
+        height: "100vh",
         backgroundColor: theme.colors.background,
         justifyContent: "center",
         alignItems: "center",

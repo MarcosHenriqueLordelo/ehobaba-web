@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
-export const Container = styled.button`
+export const Container = styled.div`
+  display: flex;
+  cursor: pointer;
   background-color: ${({ theme }) => theme.colors.section};
   border-radius: 12px;
   justify-content: space-between;
   padding: 14px 10px;
   margin-right: 10px;
+  width: fit-content;
 `;
 
 export const TopContainer = styled.div`

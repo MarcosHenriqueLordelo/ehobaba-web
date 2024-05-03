@@ -1,16 +1,15 @@
 import styled from "styled-components";
 
-export const Container = styled.button`
+export const Container = styled.div`
   display: flex;
-  background-color: ${({ theme }) => theme.colors.section};
   flex-direction: row;
+  align-items: center;
+  align-self: center;
   justify-content: space-between;
+  background-color: ${({ theme }) => theme.colors.section};
   border-radius: 12px;
   width: 90%;
   height: 50px;
-  align-items: center;
-  padding: 8px;
-  align-self: center;
   margin-bottom: 10px;
 `;
 
@@ -18,6 +17,7 @@ export const LeftContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-left: 8px;
 `;
 
 export const Location = styled.p`
@@ -25,6 +25,8 @@ export const Location = styled.p`
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
+  margin-left: 8px;
+  margin-top: -4px;
 `;
 
 export const Date = styled.p`
@@ -32,4 +34,6 @@ export const Date = styled.p`
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
+  margin-right: 8px;
+  margin-top: -4px;
 `;

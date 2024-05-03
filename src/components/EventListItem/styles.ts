@@ -2,19 +2,17 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  width: 90%;
   background-color: ${({ theme }) => theme.colors.section};
   border-radius: 12px;
-  height: 60px;
-  justify-content: space-between;
-  padding: 8px 16px;
-  flex-direction: row;
-  align-items: center;
-  align-self: center;
   margin-bottom: 10px;
+  width: 90%;
+  align-items: center;
 `;
 
-export const LeftContainer = styled.div``;
+export const LeftContainer = styled.div`
+  flex: 1;
+  padding: 8px 16px;
+`;
 
 export const Name = styled.p`
   color: ${({ theme }) => theme.colors.font};
@@ -28,4 +26,8 @@ export const Info = styled.p`
   font-size: 14px;
 `;
 
-export const DeleteContainer = styled.button``;
+export const DeleteContainer = styled.div`
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+`;

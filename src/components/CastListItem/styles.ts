@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  width: 90%;
   background-color: ${({ theme }) => theme.colors.section};
   border-radius: 12px;
-  align-self: center;
   margin-bottom: 10px;
+  width: 90%;
 `;
 
 export const Name = styled.p`

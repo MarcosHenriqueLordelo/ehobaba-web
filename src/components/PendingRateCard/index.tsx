@@ -3,7 +3,7 @@ import React from "react";
 import IconButton from "../IconButton";
 import { MdLocationOn } from "react-icons/md";
 
-import { Container, Subtitle, Title, TitleContainer } from "./styles";
+import { Container, Subtitle, Title, TitleContainer, Content } from "./styles";
 import useUi from "../../contexts/ui/useUi";
 import moment from "moment";
 
@@ -25,16 +25,18 @@ const PendingRateCard: React.FC<PropTypes> = ({
 
   return (
     <Container onClick={() => onPress && onPress(id)}>
-      <TitleContainer>
+      <Content>
         <IconButton
           size={24}
           renderIcon={() => (
             <MdLocationOn color={theme.colors.font} size={24} />
           )}
         />
-        <Title>{location}</Title>
-      </TitleContainer>
-      <Subtitle>{moment(timestamp).format("DD/MM/YYYY")}</Subtitle>
+        <TitleContainer>
+          <Title>{location}</Title>
+          <Subtitle>{moment(timestamp).format("DD/MM/YYYY")}</Subtitle>
+        </TitleContainer>
+      </Content>
     </Container>
   );
 };

@@ -16,13 +16,11 @@ import useUi from "../../contexts/ui/useUi";
 interface PropTypes {
   itemData: EventListItem;
   onDelete?: (id: string) => void;
-  showDelete?: boolean;
 }
 
 const EventListItem: React.FC<PropTypes> = ({
   itemData: { id, playerName, timestamp, type },
   onDelete,
-  showDelete,
 }) => {
   const { theme } = useUi();
   const getInfoLabel = () => moment.unix(timestamp).format("HH:mm");
@@ -33,7 +31,7 @@ const EventListItem: React.FC<PropTypes> = ({
         <Name>{playerName}</Name>
         <Info>{`${type} - ${getInfoLabel()}`}</Info>
       </LeftContainer>
-      {onDelete && showDelete && (
+      {onDelete && (
         <DeleteContainer onClick={() => onDelete(id)}>
           <IconButton
             size={24}

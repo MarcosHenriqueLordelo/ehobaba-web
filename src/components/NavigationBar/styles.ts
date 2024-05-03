@@ -5,37 +5,52 @@ interface ItemProps {
 }
 
 export const Container = styled.div`
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  align-self: center;
   border-radius: 12px;
   background-color: ${({ theme }) => theme.colors.section};
   height: 50px;
   width: 90%;
-  align-self: center;
   margin-top: 10px;
 `;
 
-export const ItemContainer = styled.button`
-  justify-content: flex-end;
+export const ItemContainer = styled.div`
+  cursor: pointer;
+  pointer-events: initial;
+  display: flex;
   align-items: center;
+  flex-direction: column;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 `;
 
-export const ItemLabel = styled.p`
-  margin-top: 6px;
-  margin-bottom: 6px;
+export const ItemLabel = styled.p<ItemProps>`
   line-height: 16px;
   font-size: 11px;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.action};
   text-transform: uppercase;
+  transition: all 0.5s;
+  opacity: 0;
+
+  transform: translateY(-1px);
+
+  ${({ selected }) =>
+    selected &&
+    `border-radius:50px;
+     transform:translateY(-8px);
+     opacity: 1;`}
 `;
 
 export const IconContainer = styled.div<ItemProps>`
+  transform: translateY(8px);
   ${({ selected, theme }) =>
     selected &&
     `border-radius:50px;
-     background-color: ${theme.colors.background};`}
+     background-color: ${theme.colors.background};
+     transform:translateY(-18px) scale(1.1);`}
   padding: 8px;
-  transition: all 1s;
+  transition: all 0.5s;
 `;

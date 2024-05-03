@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import IconButton from "../IconButton";
 
 import { Container, IconContainer, ItemContainer, ItemLabel } from "./styles";
-import useUi from "../../contexts/ui/useUi";
 
 type ItemType = {
   label: string;
@@ -21,15 +20,8 @@ const NavigationBar: React.FC<PropTypes> = ({
   defaultItem,
 }) => {
   const [selected, setSelected] = useState(defaultItem);
-  const { theme } = useUi();
 
   const isSelected = (index: number) => index === selected;
-
-  const getItemColor = (index: number) =>
-    isSelected(index) ? theme.colors.action : theme.colors.font;
-
-  const renderItemLabel = (index: number, label: string) =>
-    isSelected(index) && <ItemLabel>{label}</ItemLabel>;
 
   const handlePressed = (index: number) => {
     setSelected(index);
@@ -46,8 +38,7 @@ const NavigationBar: React.FC<PropTypes> = ({
             size={isSelected(index) ? 26 : 24}
           />
         </IconContainer>
-
-        {renderItemLabel(index, item.label)}
+        <ItemLabel selected={isSelected(index)}>{item.label}</ItemLabel>
       </ItemContainer>
     ));
 

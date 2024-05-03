@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.button`
+export const Container = styled.div`
+  cursor: pointer;
   display: flex;
   background-color: ${({ theme }) => theme.colors.section};
   flex-direction: row;
   justify-content: space-between;
   border-radius: 12px;
-  width: 100%;
+  width: 80%;
   height: 80px;
   padding: 8px 16px;
   margin-bottom: 10px;

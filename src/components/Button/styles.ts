@@ -14,7 +14,7 @@ const getBackgroundColor = (
   dark?: boolean,
   transparent?: boolean
 ): string => {
-  if (transparent) return 'transparent';
+  if (transparent) return "transparent";
 
   if (dark) return theme.colors.section;
 
@@ -24,10 +24,13 @@ const getBackgroundColor = (
 const getLabelColor = (theme: DefaultTheme, labelAction?: boolean): string => {
   if (labelAction) return theme.colors.action;
 
-  return '#FFFFFF';
+  return "#FFFFFF";
 };
 
-export const Container = styled.button<ContainerProps>`
+export const Container = styled.div<ContainerProps>`
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
   border-radius: 10px;
   background-color: ${({ theme, dark, transparent }) =>
     getBackgroundColor(theme, dark, transparent)};
@@ -35,6 +38,7 @@ export const Container = styled.button<ContainerProps>`
   justify-content: center;
   position: relative;
   ${({ transparent }) => transparent && `background-color: transparent;`};
+  width: fit-content;
 `;
 
 export const Label = styled.p<ContainerProps>`
@@ -57,5 +61,5 @@ export const LoadingContainer = styled.div`
 `;
 
 export const ActivityLoader = styled.div`
-    size: small; 
+  size: small;
 `;
