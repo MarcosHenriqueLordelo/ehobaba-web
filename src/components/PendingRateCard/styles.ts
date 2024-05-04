@@ -4,7 +4,6 @@ export const Container = styled.div`
   display: flex;
   background-color: ${({ theme }) => theme.colors.section};
   border-radius: 12px;
-  margin-right: 10px;
   width: 90%;
   align-self: center;
   margin-bottom: 10px;

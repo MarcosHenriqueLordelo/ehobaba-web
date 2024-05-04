@@ -5,7 +5,6 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.section};
   border-radius: 12px;
   height: 70px;
-  padding: 8px 16px;
   align-self: center;
   margin-bottom: 10px;
   flex-direction: row;
@@ -17,6 +16,7 @@ export const LeftContainer = styled.div`
   justify-content: space-between;
   display: flex;
   flex-direction: column;
+  padding: 8px 16px;
 `;
 
 export const Name = styled.p`

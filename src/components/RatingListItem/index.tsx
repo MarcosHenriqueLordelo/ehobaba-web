@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Container,
   LeftContainer,
@@ -8,7 +8,7 @@ import {
   ValueIndicator,
   ValueIndicatorContainer,
   ValueLabel,
-} from './styles';
+} from "./styles";
 
 interface PropTypes {
   itemData: RatingListItem;
@@ -24,7 +24,7 @@ const RatingListItem: React.FC<PropTypes> = ({
       <LeftContainer>
         <RowContainer>
           <Name>{playerName}</Name>
-          <PositionLabel>{`#${index < 10 && '0'}${index}`}</PositionLabel>
+          <PositionLabel>{`${index}°`}</PositionLabel>
         </RowContainer>
         <RowContainer>
           <ValueIndicatorContainer>

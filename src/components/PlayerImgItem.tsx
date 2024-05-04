@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import MyImage from './MyImage';
+import React from "react";
+import styled from "styled-components";
+import MyImage from "./MyImage";
 
 interface PropTypes {
   data: { id: string; name: string; photoUrl: string };
@@ -10,6 +10,8 @@ interface PropTypes {
 const Container = styled.div`
   align-items: center;
   margin-right: 16px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const PlayerName = styled.span`
@@ -18,6 +20,7 @@ const PlayerName = styled.span`
   margin-top: 6px;
   width: 60px;
   text-align: center;
+  font-size: 12px;
 `;
 
 const PlayerImgItem: React.FC<PropTypes> = ({ data, onPress }) => {

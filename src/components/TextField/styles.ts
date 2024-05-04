@@ -1,64 +1,62 @@
 import styled from "styled-components";
 
-interface BackgroundProps {
-  modal?: boolean;
-}
+export const Container = styled.div`
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 
-export const Container = styled.div<BackgroundProps>`
-  width: ${({ modal }) => (modal ? `100%` : `80%`)};
-  padding-top: 26px;
-  position: relative;
+  input:placeholder-shown + label {
+    opacity: 0;
+    transform: translateY(-3.5rem);
+  }
+
+  input:invalid + label {
+    color: ${(props) => props.theme.colors.error};
+  }
+
+  width: 90%;
+
   display: flex;
   flex-direction: column;
 `;
 
-export const BackgroundContainer = styled.div<BackgroundProps>`
-  background-color: ${({ theme, modal }) =>
-    modal ? theme.colors.background : theme.colors.section};
-  border-radius: 6px;
-  flex-direction: row;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
+export const Input = styled.input`
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: ${(props) => props.theme.colors.section};
+  color: ${(props) => props.theme.colors.font};
+  border: none;
+  transition: all 0.2s;
+  border-bottom: 0.3rem solid transparent;
+  border-radius: 12px;
 
-export const TextInput = styled.input`
-  height: 56px;
-  padding: 8px 16px;
-  color: ${({ theme }) => theme.colors.font};
-  font-size: 16px;
-  font-weight: 400;
-  flex: 1;
-  &::placeholder {
-    color: ${({ theme }) => theme.colors.font};
+  &:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 0.3rem solid ${(props) => props.theme.colors.action};
+
+    &:invalid {
+      border-bottom: 0.3rem solid ${(props) => props.theme.colors.error};
+    }
+  }
+
+  &focus &::placeholder {
+    color: ${(props) => props.theme.colors.font};
+  }
+
+  &:invalid {
+    border-bottom: 0.3rem solid ${(props) => props.theme.colors.error};
   }
 `;
 
-export const DropDownLabel = styled.p`
-  padding: 8px 16px;
-  color: ${({ theme }) => theme.colors.font};
-  font-size: 16px;
-  font-weight: 400;
-`;
-
-interface LabelProps {
-  focused?: boolean;
-}
-
-export const Label = styled.p<LabelProps>`
-  color: ${({ theme }) => theme.colors.action};
-  position: absolute;
-  margin-top: ${({ focused }) => (focused ? 12 : 50)}px;
-  margin-left: ${({ focused }) => (focused ? 10 : 16)}px;
-  z-index: ${({ focused }) => (focused ? 10 : 0)};
-  line-height: 24px;
-  font-size: 16px;
-  font-weight: 400;
-`;
-
-export const ErrorLabel = styled.p`
-  color: red;
-  font-size: 11px;
-  margin-top: 2px;
-  margin-left: 6px;
+export const Label = styled.label`
+  font-size: 1.5rem;
+  color: ${(props) => props.theme.colors.action};
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-bottom: 0.3rem;
+  transform: translateY(-8rem);
+  transition: all 0.2s;
+  cursor: text;
 `;

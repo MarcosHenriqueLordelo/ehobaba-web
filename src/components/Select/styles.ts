@@ -8,7 +8,7 @@ interface SelectProps {
 export const SelectContainer = styled.select<SelectProps>`
   font-size: ${({ theme }) => theme.fonts.medium};
   padding: 1.5rem 2rem;
-  border-radius: 0.2rem;
+  border-radius: 12px;
   background-color: ${(props) => props.theme.colors.section};
   color: ${(props) => props.theme.colors.font};
   border: none;

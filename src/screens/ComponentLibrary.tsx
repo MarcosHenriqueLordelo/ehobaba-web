@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { MdArrowBack, MdLocationOn } from "react-icons/md";
 
 import Score from "../components/Score";
@@ -22,17 +22,20 @@ import RatingListItem from "../components/RatingListItem";
 import PlayerListItem from "../components/PlayerListItem";
 import PendingRateCard from "../components/PendingRateCard";
 import PlayerSelectableItem from "../components/PlayerSelectableItem";
+import PlayerImgItem from "../components/PlayerImgItem";
 
-function Home() {
+function ComponentLibrary() {
+  const [textField, setTextField] = useState("");
+  const [slider, setSlider] = useState(50);
   const ref = useRef(null);
   return (
     <div
       style={{
         width: "100vw",
-        height: "100vh",
         backgroundColor: "#353941",
-        overflowX: "hidden",
-        overscrollBehaviorY: "contain",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
       }}
     >
       <AppBar
@@ -161,6 +164,7 @@ function Home() {
           photoUrl:
             "https://firebasestorage.googleapis.com/v0/b/ehobaba-559d0.appspot.com/o/Users-Images%2F3xU5SFTVeDQiAjfmq6mOemAw8kh2%2F104569468409-profile.jpg?alt=media",
         }}
+        selected
       />
       <div style={{ height: 10 }} />
       <Rating
@@ -190,8 +194,9 @@ function Home() {
       />
       <div style={{ height: 10 }} />
       <Slider
-        value={50}
-        onChange={(value) => console.log(value)}
+        value={slider}
+        //@ts-ignore
+        onChange={setSlider}
         min={0}
         max={99}
         label='label slider'
@@ -199,9 +204,25 @@ function Home() {
       <div style={{ height: 10 }} />
       <SnackBar position='bottom' />
       <div style={{ height: 10 }} />
-      <TextField label='TextFieldLabel' value='value' />
+      <TextField
+        id='txt'
+        type='email'
+        label='TextFieldLabel'
+        value={textField}
+        onChange={setTextField}
+      />
+      <div style={{ height: 10 }} />
+      <PlayerImgItem
+        data={{
+          id: "asdasd",
+          name: "Marcos Marques",
+          photoUrl:
+            "https://firebasestorage.googleapis.com/v0/b/ehobaba-559d0.appspot.com/o/Users-Images%2F3xU5SFTVeDQiAjfmq6mOemAw8kh2%2F104569468409-profile.jpg?alt=media",
+        }}
+      />
+      <div style={{ height: 10 }} />
     </div>
   );
 }
 
-export default Home;
+export default ComponentLibrary;

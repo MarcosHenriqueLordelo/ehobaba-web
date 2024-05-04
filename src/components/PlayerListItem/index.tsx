@@ -35,7 +35,7 @@ const PlayerListItem: React.FC<PropTypes> = ({
             <Name>{name}</Name>
             <Score score={score} />
           </LeftContainer>
-          <PositionLabel>{`#${index < 10 && "0"}${index}`}</PositionLabel>
+          <PositionLabel>{`${index}°`}</PositionLabel>
         </Content>
       ) : (
         <Content>

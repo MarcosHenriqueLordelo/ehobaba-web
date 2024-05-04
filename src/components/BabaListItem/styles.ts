@@ -7,17 +7,16 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   border-radius: 12px;
-  width: 80%;
+  width: 90%;
   height: 80px;
-  padding: 8px 16px;
   margin-bottom: 10px;
 `;
 
 export const LeftContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: space-between;
+  padding: 8px 0px 8px 16px;
 `;
 
 export const Name = styled.p`
@@ -35,6 +34,7 @@ export const LastMatch = styled.p`
 export const RightContainer = styled.div`
   display: flex;
   flex-direction: row;
+  padding: 8px 16px 8px 0px;
 `;
 
 export const CastLength = styled.p`

@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import useUi from "./contexts/ui/useUi";
 
 // Pages
-import Home from "./screens/Home";
+import ComponentLibrary from "./screens/ComponentLibrary";
 
 // Components
 import Loading from "./components/Loading";
@@ -21,7 +21,7 @@ const App: React.FC = () => {
       ) : (
         <Router>
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<ComponentLibrary />} />
           </Routes>
         </Router>
       )}
