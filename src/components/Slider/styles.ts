@@ -10,6 +10,7 @@ export const SliderContainer = styled.div``;
 
 export const IndicatorsView = styled.div`
   flex-direction: row;
+  display: flex;
   justify-content: space-between;
   margin-top: -11px;
 `;

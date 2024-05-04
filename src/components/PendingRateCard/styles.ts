@@ -9,6 +9,8 @@ export const Container = styled.div`
   align-self: center;
   margin-bottom: 10px;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
 `;
 
 export const Content = styled.div`

@@ -32,8 +32,7 @@ const PlayerListItem: React.FC<PropTypes> = ({
       {!onDelete ? (
         <Content>
           <LeftContainer>
-            <Name>{name}</Name> //TODO: passar para dentro do estilo o número de
-            linhas DONE
+            <Name>{name}</Name>
             <Score score={score} />
           </LeftContainer>
           <PositionLabel>{`#${index < 10 && "0"}${index}`}</PositionLabel>
@@ -51,8 +50,6 @@ const PlayerListItem: React.FC<PropTypes> = ({
               <MdOutlineDelete color={theme.colors.font} size={24} />
             )}
           />
-          //TODO: descobrir como fazer ele aparecer quando arrastar o componente
-          para o lado
         </Content>
       )}
     </Container>

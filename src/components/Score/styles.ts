@@ -17,6 +17,8 @@ export const ItemContainer = styled.div<ItemProps>`
   ${({ lastItem }) => !lastItem && `margin-right:10px;`}
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ItemLabel = styled.p<LabelProps>`

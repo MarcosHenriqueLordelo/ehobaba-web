@@ -8,6 +8,8 @@ export const Container = styled.div<BackgroundProps>`
   width: ${({ modal }) => (modal ? `100%` : `80%`)};
   padding-top: 26px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const BackgroundContainer = styled.div<BackgroundProps>`
@@ -15,6 +17,7 @@ export const BackgroundContainer = styled.div<BackgroundProps>`
     modal ? theme.colors.background : theme.colors.section};
   border-radius: 6px;
   flex-direction: row;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 `;

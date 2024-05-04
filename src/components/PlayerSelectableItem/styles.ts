@@ -10,6 +10,7 @@ export const Container = styled.div<ContainerProps>`
   flex-direction: row;
   align-items: center;
   padding: 6px;
+  display: flex;
 `;
 
 export const PlayerName = styled.p`
