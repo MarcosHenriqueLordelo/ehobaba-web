@@ -7,22 +7,22 @@ export const Container = styled.div`
   height: 90px;
   align-self: center;
   margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
+  
+  ;
 `;
 
 export const Content = styled.div`
   height: 100%;
   flex-direction: row;
   padding: 8px 16px;
-  display: flex;
+  
 `;
 
 export const LeftContainer = styled.div`
   flex: 1;
   justify-content: space-between;
-  display: flex;
-  flex-direction: column;
+  
+  ;
 `;
 
 export const Name = styled.p`

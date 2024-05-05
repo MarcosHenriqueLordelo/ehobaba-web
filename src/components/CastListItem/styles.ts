@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
+  
   background-color: ${({ theme }) => theme.colors.section};
   border-radius: 12px;
   margin-bottom: 10px;
@@ -19,7 +19,7 @@ export const Name = styled.p`
 `;
 
 export const Content = styled.div`
-  display: flex;
+  
   flex-direction: row;
   align-items: center;
   flex: 1;

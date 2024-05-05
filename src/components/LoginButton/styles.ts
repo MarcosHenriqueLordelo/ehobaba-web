@@ -9,7 +9,7 @@ interface LabelProps {
 }
 
 export const Container = styled.div<ContainerProps>`
-  display: flex;
+  
   background-color: ${({ color }) => color};
   width: 80%;
   border-radius: 10px;

@@ -6,8 +6,8 @@ interface ContainerProps {
 
 export const Container = styled.div<ContainerProps>`
   position: absolute;
-  display: flex;
-  flex-direction: column;
+  
+  ;
   width: "100%";
   bottom: 16px;
   left: 16px;
@@ -20,7 +20,7 @@ export const Container = styled.div<ContainerProps>`
 export const Content = styled.div`
   flex: 1;
   flex-direction: row;
-  display: flex;
+  
   margin: 8px 10px;
   padding: 8px 0px;
   background-color: ${({ theme }) => theme.colors.error};

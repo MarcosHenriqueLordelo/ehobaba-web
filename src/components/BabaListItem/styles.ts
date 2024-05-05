@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   cursor: pointer;
-  display: flex;
+
   background-color: ${({ theme }) => theme.colors.section};
   flex-direction: row;
   justify-content: space-between;
@@ -13,8 +13,6 @@ export const Container = styled.div`
 `;
 
 export const LeftContainer = styled.div`
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
   padding: 8px 0px 8px 16px;
 `;
@@ -32,9 +30,9 @@ export const LastMatch = styled.p`
 `;
 
 export const RightContainer = styled.div`
-  display: flex;
   flex-direction: row;
   padding: 8px 16px 8px 0px;
+  align-items: flex-start;
 `;
 
 export const CastLength = styled.p`

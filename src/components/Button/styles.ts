@@ -28,8 +28,8 @@ const getLabelColor = (theme: DefaultTheme, labelAction?: boolean): string => {
 };
 
 export const Container = styled.div<ContainerProps>`
-  display: flex;
-  flex-direction: column;
+  
+  ;
   cursor: pointer;
   border-radius: 10px;
   background-color: ${({ theme, dark, transparent }) =>

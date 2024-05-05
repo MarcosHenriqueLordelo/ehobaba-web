@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 80%;
   height: 500px;
-  display: flex;
-  flex-direction: column;
+  
+  ;
   align-items: center;
   background: linear-gradient(
     120deg,
@@ -16,7 +16,7 @@ export const Container = styled.div`
 `;
 
 export const TopContainer = styled.div`
-  display: flex;
+  
   flex: 1;
   flex-direction: row;
   position: relative;
@@ -26,8 +26,8 @@ export const TopContainer = styled.div`
 export const BottomContainer = styled.div`
   justify-content: space-between;
   align-items: center;
-  display: flex;
-  flex-direction: column;
+  
+  ;
   padding: 8px;
   width: 90%;
   border-top-width: 1px;
@@ -36,23 +36,23 @@ export const BottomContainer = styled.div`
 `;
 
 export const AvarageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  
+  ;
 `;
 
 export const Retangle = styled.div`
   width: 70px;
   height: 60px;
-  display: flex;
-  flex-direction: column;
+  
+  ;
   justify-content: flex-end;
   align-items: center;
   position: relative;
 `;
 
 export const RetangleBackground = styled.div`
-  display: flex;
-  flex-direction: column;
+  
+  ;
   position: absolute;
   background-color: ${({ theme }) => theme.colors.action};
   width: 100%;
@@ -61,8 +61,8 @@ export const RetangleBackground = styled.div`
 `;
 
 export const TriangleDown = styled.div`
-  display: flex;
-  flex-direction: column;
+  
+  ;
   width: 0;
   height: 0;
   background-color: transparent;
@@ -85,31 +85,31 @@ export const AvarageLabel = styled.span`
 `;
 
 export const LeftContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  
+  ;
   flex: 1;
   justify-content: space-between;
   padding-bottom: 8px;
 `;
 
 export const RightContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  
+  ;
   align-items: flex-end;
   flex: 1;
   padding-top: 8px;
 `;
 
 export const MidRowContainer = styled.div`
-  display: flex;
+  
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
 `;
 
 export const MidInfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  
+  ;
 `;
 
 export const MidlTitle = styled.span`
@@ -117,7 +117,7 @@ export const MidlTitle = styled.span`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.font};
   flex-wrap: wrap;
-  display: flex;
+  
 `;
 
 export const MidlValue = styled.span`
@@ -146,8 +146,8 @@ export const Flag = styled.img`
 `;
 
 export const RatingContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  
+  ;
   justify-content: center;
   flex: 1;
   z-index: 1;

@@ -72,7 +72,7 @@ const PlayerCard: React.FC<PropTypes> = ({
           <PlayerName>{name}</PlayerName>
         </LeftContainer>
         <RightContainer>
-          <Flag src={`https://flagcdn.com/w160/${country}.png`} />
+          <Flag src={`https://flagcdn.com/w160/${country.toLowerCase()}.png`} />
           <RatingContainer>
             <Rating rating={rating} />
           </RatingContainer>

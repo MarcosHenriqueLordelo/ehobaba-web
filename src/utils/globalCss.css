@@ -11,12 +11,16 @@
   @media (max-width: 1200px) {
     font-size: 56.25%;
   }
-  
+
   @media (max-width: 900px) {
     font-size: 50%;
   }
   @media (min-width: 1800px) {
     font-size: 75%;
   }
-}
 
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+}

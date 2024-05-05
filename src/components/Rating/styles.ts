@@ -4,7 +4,7 @@ interface ContainerProps {
   row?: boolean;
 }
 export const Container = styled.div<ContainerProps>`
-  ${({ row }) => row && 'flex-direction: row; display: flex;'}
+  ${({ row }) => row && 'flex-direction: row; '}
 `;
 
 interface ItemProps {
@@ -21,8 +21,8 @@ export const ItemContainer = styled.div<ItemProps>`
     !lastItem && `${row ? 'margin-right:20px;' : 'margin-bottom:6px'};`}
   justify-content: center;
   align-items: center;
-  display: flex;
-  flex-direction: column;
+  
+  ;
 `;
 
 export const ItemLabel = styled.p<LabelProps>`

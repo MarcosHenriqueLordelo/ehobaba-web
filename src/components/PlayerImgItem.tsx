@@ -10,8 +10,6 @@ interface PropTypes {
 const Container = styled.div`
   align-items: center;
   margin-right: 16px;
-  display: flex;
-  flex-direction: column;
 `;
 
 const PlayerName = styled.span`
@@ -21,6 +19,11 @@ const PlayerName = styled.span`
   width: 60px;
   text-align: center;
   font-size: 12px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 `;
 
 const PlayerImgItem: React.FC<PropTypes> = ({ data, onPress }) => {

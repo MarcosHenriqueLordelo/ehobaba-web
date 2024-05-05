@@ -1,36 +1,31 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
   cursor: pointer;
   background-color: ${({ theme }) => theme.colors.section};
   border-radius: 12px;
   justify-content: space-between;
-  padding: 14px 10px;
   margin-right: 10px;
   width: fit-content;
 `;
 
-export const TopContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
 export const HeaderContainer = styled.div`
-  display: flex;
   flex-direction: row;
   align-items: flex-start;
+  padding: 14px 10px;
 `;
 
 export const TitleContainer = styled.div`
+  width: 100px;
   margin-left: 6px;
   margin-top: -4px;
 `;
 
-export const Title = styled.p`
+export const Title = styled.span`
   font-size: 22px;
   color: ${({ theme }) => theme.colors.font};
+  line-height: 22px;
+  margin-bottom: 6px;
 `;
 
 export const Subtitle = styled.p`

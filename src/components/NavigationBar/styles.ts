@@ -5,7 +5,6 @@ interface ItemProps {
 }
 
 export const Container = styled.div`
-  display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -15,14 +14,16 @@ export const Container = styled.div`
   height: 50px;
   width: 90%;
   margin-top: 10px;
+
+  position: absolute;
+  bottom: 16px;
 `;
 
 export const ItemContainer = styled.div`
   cursor: pointer;
   pointer-events: initial;
-  display: flex;
+
   align-items: center;
-  flex-direction: column;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 `;
 

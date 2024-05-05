@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
+  
   flex-direction: row;
   align-items: center;
   align-self: center;
@@ -14,7 +14,7 @@ export const Container = styled.div`
 `;
 
 export const LeftContainer = styled.div`
-  display: flex;
+  
   flex-direction: row;
   align-items: center;
   padding-left: 8px;

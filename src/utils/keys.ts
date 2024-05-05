@@ -1,7 +1,2 @@
-export const ANDROID_CLIENT_ID = process.env.ANDROID_CLIENT_ID;
-export const API = process.env.API;
-export const EXPO_CLIENT_ID = process.env.EXPO_CLIENT_ID;
-export const FACEBOOK_APP_ID = process.env.FACEBOOK_APP_ID;
-export const FACEBOOK_CLIENT_TOKEN = process.env.FACEBOOK_CLIENT_TOKEN;
-export const IOS_CLIENT_ID = process.env.IOS_CLIENT_ID;
-export const REMBG_API = process.env.REMBG_API;
+export const REMBG_API = "https://rembg2-mu2liixcfq-uc.a.run.app";
+export const API = "https://us-central1-ehobaba-559d0.cloudfunctions.net/";

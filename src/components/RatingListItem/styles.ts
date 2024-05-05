@@ -8,14 +8,14 @@ export const Container = styled.div`
   align-self: center;
   margin-bottom: 10px;
   flex-direction: row;
-  display: flex;
+  
 `;
 
 export const LeftContainer = styled.div`
   flex: 1;
   justify-content: space-between;
-  display: flex;
-  flex-direction: column;
+  
+  ;
   padding: 8px 16px;
 `;
 
@@ -38,7 +38,7 @@ export const RowContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  display: flex;
+  
 `;
 
 export const ValueLabel = styled.p`
@@ -51,8 +51,8 @@ export const ValueLabel = styled.p`
 export const ValueIndicatorContainer = styled.div`
   flex: 1;
   height: 8px;
-  display: flex;
-  flex-direction: column;
+  
+  ;
 `;
 
 interface ValueIndicatorProps {
