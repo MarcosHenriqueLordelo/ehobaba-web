@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import MyImage from "./MyImage";
 
@@ -27,6 +27,10 @@ const PlayerName = styled.span`
 `;
 
 const PlayerImgItem: React.FC<PropTypes> = ({ data, onPress }) => {
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
   return (
     <Container onClick={onPress}>
       <MyImage size={60} rounded uri={data.photoUrl} />

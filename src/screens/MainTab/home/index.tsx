@@ -4,7 +4,7 @@ import useUi from "../../../contexts/ui/useUi";
 import useBaba from "../../../contexts/baba/useBaba";
 import useUser from "../../../contexts/user/useUser";
 
-import { Container, SectionLabel } from "./styles";
+import { Container, HorizontalScroll, SectionLabel } from "./styles";
 
 import GameItemCard from "../../../components/GameItemCard";
 import Spacer from "../../../components/Spacer";
@@ -12,7 +12,7 @@ import PlayerImgItem from "../../../components/PlayerImgItem";
 import PendingRateCard from "../../../components/PendingRateCard";
 import AppBar from "../../../components/AppBar";
 
-// import PlayerModal from '../../../modals/PlayerModal';
+import PlayerModal from "../../../modals/PlayerModal";
 
 import renderNoData from "../../../utils/renderNoData";
 import useGame from "../../../contexts/game/useGame";
@@ -61,13 +61,7 @@ const Home: React.FC<Proptypes> = ({ onNavigate }) => {
         <SectionLabel>{strings.lastMatches}</SectionLabel>
         <Spacer height={16} />
         {lastGames ? (
-          <div
-            style={{
-              flexDirection: "row",
-              overflowX: "scroll",
-              paddingLeft: 16,
-            }}
-          >
+          <HorizontalScroll>
             {lastGames.map((game) => (
               <GameItemCard
                 cardData={game}
@@ -76,7 +70,7 @@ const Home: React.FC<Proptypes> = ({ onNavigate }) => {
               />
             ))}
             <Spacer width={16} />
-          </div>
+          </HorizontalScroll>
         ) : (
           renderNoData(strings.notPlayedAnyMatchYet)
         )}
@@ -84,13 +78,7 @@ const Home: React.FC<Proptypes> = ({ onNavigate }) => {
         <SectionLabel>{strings.playedRecently}</SectionLabel>
         <Spacer height={22} />
         {lastGamePlayers ? (
-          <div
-            style={{
-              flexDirection: "row",
-              overflowX: "scroll",
-              paddingLeft: 16,
-            }}
-          >
+          <HorizontalScroll>
             {lastGamePlayers.map((player) => (
               <PlayerImgItem
                 data={player}
@@ -99,7 +87,7 @@ const Home: React.FC<Proptypes> = ({ onNavigate }) => {
               />
             ))}
             <Spacer width={16} />
-          </div>
+          </HorizontalScroll>
         ) : (
           renderNoData(strings.notPlayedAnyMatchYet)
         )}
@@ -117,12 +105,12 @@ const Home: React.FC<Proptypes> = ({ onNavigate }) => {
           : renderNoData(strings.noPendingRates)}
         <Spacer height={22} />
       </div>
-      {/*
+
       <PlayerModal
         open={selectedPlayer !== undefined}
         onClose={() => setSelectedPlayer(undefined)}
         playerId={selectedPlayer}
-      />*/}
+      />
     </Container>
   );
 };

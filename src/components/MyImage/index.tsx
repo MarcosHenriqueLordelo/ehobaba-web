@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from "react";
 
-import { Img } from './styles';
+import { Img } from "./styles";
 
-import defaultImg from '../../assets/user.jpg';
+import defaultImg from "../../assets/user.jpg";
 
 interface PropTypes {
   size: number;
@@ -23,11 +23,16 @@ const MyImage: React.FC<PropTypes> = ({ size, rounded, uri }) => {
     }
   }, [uri]);
 
+  const getImage = useMemo(() => {
+    if (error || showDefault) return defaultImg;
+    return imageUri;
+  }, [error, showDefault]);
+
   return (
     <Img
-      onLoadedData={() => setShowDefault(false)}
       onError={() => setError(true)}
-      src={showDefault || error ? defaultImg : imageUri}
+      onLoad={() => setShowDefault(false)}
+      src={getImage}
       size={size}
       rounded={rounded}
     />

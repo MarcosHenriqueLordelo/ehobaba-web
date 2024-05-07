@@ -6,6 +6,7 @@ const NoDataContainer = styled.div``;
 const NoDataLabel = styled.span`
   text-align: center;
   color: ${({ theme }) => theme.colors.font};
+  font-size: 16px;
 `;
 
 const renderNoData = (text: string) => (

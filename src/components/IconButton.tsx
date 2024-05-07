@@ -22,6 +22,7 @@ const IconButton: React.FC<PropTypes> = ({
         width: containerSize,
         justifyContent: "center",
         alignItems: "center",
+        cursor: "pointer",
         ...style,
       }}
     >

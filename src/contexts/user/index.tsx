@@ -30,6 +30,10 @@ interface UserContext {
   addPerformanceEvaluation: (
     data: AddPerformanceEvaluationReq
   ) => Promise<boolean>;
+  playerToBeRatedData?: PlayerToBeEvaluated;
+  setPlayerToBeRatedData: React.Dispatch<
+    React.SetStateAction<PlayerToBeEvaluated | undefined>
+  >;
 }
 
 const UserContext = createContext<UserContext>({} as UserContext);
@@ -45,6 +49,8 @@ export const UserProvider: React.FC<DefaultProps> = ({ children }) => {
   const [authToken, setAuthToken] = useState<string>();
   const [email, setEmail] = useState<string>();
   const [pendingRates, setPendingRates] = useState<PendingRatesList>();
+  const [playerToBeRatedData, setPlayerToBeRatedData] =
+    useState<PlayerToBeEvaluated>();
 
   useEffect(() => {
     loadRescources();
@@ -424,6 +430,8 @@ export const UserProvider: React.FC<DefaultProps> = ({ children }) => {
         verifyPasswordCode,
         changePassword,
         addPerformanceEvaluation,
+        setPlayerToBeRatedData,
+        playerToBeRatedData,
       }}
     >
       {children}

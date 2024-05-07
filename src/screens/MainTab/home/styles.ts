@@ -13,3 +13,10 @@ export const SectionLabel = styled.span`
   text-transform: capitalize;
   margin-left: 16px;
 `;
+
+export const HorizontalScroll = styled.div`
+  flex-direction: row;
+  overflow-x: scroll;
+  padding-left: 16px;
+  scrollbar-width: none;
+`;

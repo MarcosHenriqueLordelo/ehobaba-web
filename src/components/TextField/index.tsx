@@ -1,15 +1,18 @@
 import React from "react";
 
-import { Container, Input, Label } from "./styles";
+import { Container, ErrorLabel, Input, Label } from "./styles";
 
 interface PropTypes {
-  type: "text" | "email" | "password";
+  type: "text" | "email" | "password" | "number";
   id: string;
   value: string;
   label: string;
   required?: boolean;
   placeholder?: string;
   onChange?: (value: string) => void;
+  error?: string;
+  modal?: boolean;
+  maxLength?: number;
 }
 
 const TextField: React.FC<PropTypes> = ({
@@ -20,9 +23,13 @@ const TextField: React.FC<PropTypes> = ({
   placeholder,
   required,
   type,
+  modal,
+  error,
+  maxLength,
 }) => {
   return (
-    <Container>
+    <Container modal={modal}>
+      <Label htmlFor={id}>{label}</Label>
       <Input
         value={value}
         type={type}
@@ -30,9 +37,10 @@ const TextField: React.FC<PropTypes> = ({
         id={id}
         required={required}
         onChange={({ target: { value } }) => onChange && onChange(value)}
+        modal={modal}
+        maxLength={maxLength}
       />
-
-      <Label htmlFor={id}>{label}</Label>
+      <ErrorLabel>{error}</ErrorLabel>
     </Container>
   );
 };

@@ -7,7 +7,7 @@ type Rating = {
   rac: number;
 };
 
-type TypeRating = 'vel' | 'chu' | 'pas' | 'mar' | 'dri' | 'rac';
+type TypeRating = "vel" | "chu" | "pas" | "mar" | "dri" | "rac";
 
 type RatingListItem = {
   playerName: string;
@@ -29,4 +29,9 @@ type PendingRatesList = PendingRate[];
 
 type VoteSessionRatings = {
   [key: string]: number;
+};
+
+type PlayerToBeEvaluated = {
+  playerData: Info;
+  playerId: string;
 };

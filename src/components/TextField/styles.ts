@@ -1,30 +1,25 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  &:not(:last-child) {
-    margin-bottom: 2rem;
-  }
+interface InputProps {
+  modal?: boolean;
+}
 
-  input:placeholder-shown + label {
-    opacity: 0;
-    transform: translateY(-3.5rem);
+export const Container = styled.div<InputProps>`
+  &:not(:last-child) {
+    ${({ modal }) => !modal && "margin-bottom: 2rem;"}
   }
 
   input:invalid + label {
     color: ${(props) => props.theme.colors.error};
   }
-
-  width: 90%;
-
-  
-  ;
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<InputProps>`
   font-size: 1.5rem;
   padding: 1.5rem 2rem;
   border-radius: 0.2rem;
-  background-color: ${(props) => props.theme.colors.section};
+  background-color: ${({ theme, modal }) =>
+    modal ? theme.colors.background : theme.colors.section};
   color: ${(props) => props.theme.colors.font};
   border: none;
   transition: all 0.2s;
@@ -51,12 +46,18 @@ export const Input = styled.input`
 `;
 
 export const Label = styled.label`
-  font-size: 1.5rem;
+  font-size: 16px;
   color: ${(props) => props.theme.colors.action};
   font-weight: 700;
   margin-left: 2rem;
-  margin-bottom: 0.3rem;
-  transform: translateY(-8rem);
-  transition: all 0.2s;
+  margin-bottom: 8px;
+  cursor: text;
+`;
+
+export const ErrorLabel = styled.span`
+  font-size: 12px;
+  color: ${(props) => props.theme.colors.error};
+  margin-left: 1.5rem;
+  margin-top: 2px;
   cursor: text;
 `;

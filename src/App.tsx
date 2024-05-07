@@ -8,6 +8,7 @@ import useUi from "./contexts/ui/useUi";
 // Pages
 import ComponentLibrary from "./screens/ComponentLibrary";
 import Login from "./screens/LoginNav/login";
+import PerformanceEvaluation from "./screens/MainTab/performanceEvaluation";
 
 //Tabs
 import MainTab from "./tabs/MainTab";
@@ -28,6 +29,10 @@ const App: React.FC = () => {
             <Route path='/' element={<MainTab />} />
             <Route path='/login' element={<Login />} />
             <Route path='/components' element={<ComponentLibrary />} />
+            <Route
+              path='/performanceEvaluation'
+              element={<PerformanceEvaluation />}
+            />
           </Routes>
         </Router>
       )}

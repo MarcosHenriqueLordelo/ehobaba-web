@@ -47,7 +47,7 @@ const AppBar: React.FC<PropTypes> = ({
             onPress={onPrimaryAction}
             size={24}
             renderIcon={primaryAction}
-            style={{ paddingLeft: 24 }}
+            style={{ marginLeft: 24 }}
           />
         )}
         {secondaryAction && (
@@ -55,7 +55,7 @@ const AppBar: React.FC<PropTypes> = ({
             onPress={onSecondaryAction}
             size={24}
             renderIcon={secondaryAction}
-            style={{ paddingLeft: 24 }}
+            style={{ marginLeft: 24 }}
           />
         )}
       </RightContainer>

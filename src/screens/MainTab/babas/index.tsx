@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { MdAdd, MdLogin } from "react-icons/md";
 
+import { Container, ListContainer } from "./styles";
+
 import useUi from "../../../contexts/ui/useUi";
 import useBaba from "../../../contexts/baba/useBaba";
 
-import { Container, ListContainer } from "./styles";
+import renderNoData from "../../../utils/renderNoData";
+
+import JoinBabaModal from "../../../modals/JoinBabaModal";
+import CreateBabaModal from "../../../modals/CreateBabaModal";
 
 import BabaListItem from "../../../components/BabaListItem";
-import renderNoData from "../../../utils/renderNoData";
-//import JoinBabaModal from "../../../modals/JoinBabaModal";
-//import CreateBabaModal from "../../../modals/CreateBabaModal";
 import Loading from "../../../components/Loading";
 import AppBar from "../../../components/AppBar";
 
@@ -60,7 +62,6 @@ const Babas: React.FC<Proptypes> = ({ onNavigate }) => {
         </ListContainer>
       )}
 
-      {/*
       <JoinBabaModal open={joinBaba} onClose={() => setJoinBaba(false)} />
       <CreateBabaModal
         open={createBaba}
@@ -68,7 +69,7 @@ const Babas: React.FC<Proptypes> = ({ onNavigate }) => {
           setCreateBaba(false);
           setErrors({});
         }}
-      />*/}
+      />
     </Container>
   );
 };
