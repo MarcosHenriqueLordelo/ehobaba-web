@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-// import CreateGameModal from '../../../modals/CreateGameModal';
+import CreateGameModal from '../../../modals/CreateGameModal';
 
 import AppBar from "../../../components/AppBar";
 import GameListItem from "../../../components/GameListItem";
@@ -49,20 +49,20 @@ const Games: React.FC<PropTypes> = ({ onNavigate }) => {
               key={game.id}
               onPress={() => {
                 getGame({ babaId: baba!.id, gameId: game.id });
-                onNavigate("GameTab");
+                onNavigate("/gameTab");
               }}
             />
           ))}
           <Spacer height={20} />
         </ListContainer>
       )}
-      {/* <CreateGameModal
+      <CreateGameModal
         open={createGame}
         onClose={() => {
           setCreateGame(false);
           setErrors({});
         }}
-      />*/}
+      />
     </Container>
   );
 };

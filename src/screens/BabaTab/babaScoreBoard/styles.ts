@@ -27,7 +27,7 @@ export const Content = styled.div`
 export const ListContainer = styled.div`
   flex: 1;
   overflow-y: scroll;
-  max-height: ${window.innerHeight - 140}px;
+  max-height: ${window.innerHeight - 150}px;
 `;
 
 export const CaptureDateLabel = styled.span`

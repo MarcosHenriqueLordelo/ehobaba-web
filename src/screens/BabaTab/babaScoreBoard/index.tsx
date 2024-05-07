@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import AppBar from "../../../components/AppBar";
 import Loading from "../../../components/Loading";
@@ -11,14 +11,14 @@ import useBaba from "../../../contexts/baba/useBaba";
 
 import { ChipsContainer, Container, Content, ListContainer } from "./styles";
 
-// import AddPlayerModal from '../../../modals/AddPlayerModal';
+import AddPlayerModal from "../../../modals/AddPlayerModal";
 
 interface PropTypes {
   onNavigate: (screen: string) => void;
 }
 
 const BabaScoreBoard: React.FC<PropTypes> = ({ onNavigate }) => {
-  const { loading, strings, setErrors } = useUi();
+  const { loading, strings } = useUi();
   const { baba, scoreBoard } = useBaba();
 
   const [addPlayerModal, setAddPlayerModal] = useState(false);
@@ -80,10 +80,10 @@ const BabaScoreBoard: React.FC<PropTypes> = ({ onNavigate }) => {
             </ListContainer>
           </Content>
         )}
-        {/* <AddPlayerModal
+        <AddPlayerModal
           onClose={() => setAddPlayerModal(false)}
           open={addPlayerModal}
-        /> */}
+        />
       </Container>
     </Container>
   );

@@ -5,8 +5,8 @@ import Loading from "../../../components/Loading";
 import Spacer from "../../../components/Spacer";
 import CastListItem from "../../../components/CastListItem";
 
-// import BabaCodeModal from '../../../modals/BabaCodeModal';
-// import ConfirmModal from '../../../modals/ConfirmModal';
+import BabaCodeModal from '../../../modals/BabaCodeModal';
+import ConfirmModal from '../../../modals/ConfirmModal';
 
 import useBaba from "../../../contexts/baba/useBaba";
 import useUi from "../../../contexts/ui/useUi";
@@ -80,7 +80,7 @@ const Cast: React.FC<PropTypes> = ({ onNavigate }) => {
           <Spacer height={40} />
         </Content>
       )}
-      {/* <BabaCodeModal
+      <BabaCodeModal
         open={babaCodeModal}
         onClose={() => setBabaCodeModal(false)}
         code={baba!.code.toString()}
@@ -91,7 +91,7 @@ const Cast: React.FC<PropTypes> = ({ onNavigate }) => {
         message={strings.removePlayerFromBabaMessage}
         open={confirmModal}
         title={strings.removePlayerFromBabaTitle}
-      /> */}
+      />
     </Container>
   );
 };

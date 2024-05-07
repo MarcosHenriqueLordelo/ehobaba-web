@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Container, ErrorLabel, Input, Label } from "./styles";
+import { Container, ErrorLabel, Input, Label, Content } from "./styles";
+import IconButton from "../IconButton";
 
 interface PropTypes {
   type: "text" | "email" | "password" | "number";
@@ -13,6 +14,7 @@ interface PropTypes {
   error?: string;
   modal?: boolean;
   maxLength?: number;
+  action?: { renderIcon: () => JSX.Element; onAction: () => void };
 }
 
 const TextField: React.FC<PropTypes> = ({
@@ -26,20 +28,31 @@ const TextField: React.FC<PropTypes> = ({
   modal,
   error,
   maxLength,
+  action,
 }) => {
   return (
     <Container modal={modal}>
       <Label htmlFor={id}>{label}</Label>
-      <Input
-        value={value}
-        type={type}
-        placeholder={placeholder}
-        id={id}
-        required={required}
-        onChange={({ target: { value } }) => onChange && onChange(value)}
-        modal={modal}
-        maxLength={maxLength}
-      />
+      <Content>
+        <Input
+          value={value}
+          type={type}
+          placeholder={placeholder}
+          id={id}
+          required={required}
+          onChange={({ target: { value } }) => onChange && onChange(value)}
+          modal={modal}
+          maxLength={maxLength}
+        />
+        {action && (
+          <IconButton
+            renderIcon={action.renderIcon}
+            size={24}
+            onPress={action.onAction}
+          />
+        )}
+      </Content>
+
       <ErrorLabel>{error}</ErrorLabel>
     </Container>
   );

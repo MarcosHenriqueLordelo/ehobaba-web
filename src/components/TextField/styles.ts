@@ -13,7 +13,7 @@ export const Container = styled.div<InputProps>`
     color: ${(props) => props.theme.colors.error};
   }
 
-  ${({ modal }) => !modal && "width: 90%;"}
+  width: 90%;
 `;
 
 export const Input = styled.input<InputProps>`
@@ -45,6 +45,8 @@ export const Input = styled.input<InputProps>`
   &:invalid {
     border-bottom: 0.3rem solid ${(props) => props.theme.colors.error};
   }
+  
+  width: 100%;
 `;
 
 export const Label = styled.label`
@@ -62,4 +64,9 @@ export const ErrorLabel = styled.span`
   margin-left: 1.5rem;
   margin-top: 2px;
   cursor: text;
+`;
+
+export const Content = styled.div`
+  flex-direction: row;
+  align-items: center;
 `;
