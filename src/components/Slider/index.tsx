@@ -13,7 +13,7 @@ import {
 interface PropTypes {
   min?: number;
   max?: number;
-  onChange: (value: number | readonly number[]) => void;
+  onChange: (value: number) => void;
   value: number;
   label?: string;
 }
@@ -49,7 +49,7 @@ const Slider: React.FC<PropTypes> = ({ min, max, onChange, value, label }) => {
           max={max || 99}
           step={1}
           value={value}
-          onChange={onChange}
+          onChange={(val) => typeof val === "number" && onChange(val)}
           renderTrack={Track}
           renderThumb={Thumb}
         />

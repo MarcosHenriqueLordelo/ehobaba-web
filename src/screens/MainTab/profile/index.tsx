@@ -28,7 +28,7 @@ const Profile: React.FC<Proptypes> = ({ onNavigate }) => {
       <AppBar
         title={strings.myProfile}
         secondaryAction={() => <MdEdit size={24} color={theme.colors.action} />}
-        onSecondaryAction={() => onNavigate("EditAccount")}
+        onSecondaryAction={() => onNavigate("/editAccount")}
       />
       {loading ? (
         <Loading />

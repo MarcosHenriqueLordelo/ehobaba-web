@@ -99,7 +99,7 @@ const Home: React.FC<Proptypes> = ({ onNavigate }) => {
               <PendingRateCard
                 cardData={game}
                 key={game.id}
-                onPress={() => onNavigate("VoteSession", { sessionData: game })}
+                onPress={() => onNavigate("/voteSession", { sessionData: game })}
               />
             ))
           : renderNoData(strings.noPendingRates)}

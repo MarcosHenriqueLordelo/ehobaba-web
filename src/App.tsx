@@ -14,6 +14,8 @@ import VerifyCode from "./screens/LoginNav/verifyCode";
 import ComponentLibrary from "./screens/ComponentLibrary";
 import Login from "./screens/LoginNav/login";
 import PerformanceEvaluation from "./screens/MainTab/performanceEvaluation";
+import VoteSession from "./screens/MainTab/voteSession";
+import EditAccount from "./screens/MainTab/editAccount";
 
 //Tabs
 import MainTab from "./tabs/MainTab";
@@ -44,6 +46,8 @@ const App: React.FC = () => {
             <Route path='/changePassword' element={<ChangePassword />} />
             <Route path='/createProfile' element={<CreateProfile />} />
             <Route path='/createAccount' element={<CreateAccount />} />
+            <Route path='/voteSession' element={<VoteSession />} />
+            <Route path='/editAccount' element={<EditAccount />} />
           </Routes>
         </Router>
       )}
