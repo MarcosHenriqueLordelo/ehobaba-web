@@ -13,7 +13,7 @@ import { MdHomeFilled, MdPerson, MdWorkspacesFilled } from "react-icons/md";
 import AuthLayout from "../layouts/authLyt";
 
 const MainTab: React.FC = () => {
-  const { strings } = useUi();
+  const { strings, theme } = useUi();
   const navigate = useNavigate();
 
   const [currentTab, setCurrentTab] = useState(1);
@@ -40,15 +40,19 @@ const MainTab: React.FC = () => {
       <NavigationBar
         items={[
           {
-            renderIcon: () => <MdWorkspacesFilled size={24} color='#FFF' />,
+            renderIcon: () => (
+              <MdWorkspacesFilled size={24} color={theme.colors.font} />
+            ),
             label: strings.babas,
           },
           {
-            renderIcon: () => <MdHomeFilled size={24} color='#FFF' />,
+            renderIcon: () => (
+              <MdHomeFilled size={24} color={theme.colors.font} />
+            ),
             label: strings.home,
           },
           {
-            renderIcon: () => <MdPerson size={24} color='#FFF' />,
+            renderIcon: () => <MdPerson size={24} color={theme.colors.font} />,
             label: strings.profile,
           },
         ]}

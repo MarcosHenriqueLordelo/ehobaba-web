@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  
   background-color: ${({ theme }) => theme.colors.section};
   border-radius: 12px;
   margin-bottom: 10px;
   width: 90%;
+  align-self: center;
 `;
 
 export const Name = styled.p`
@@ -19,7 +19,6 @@ export const Name = styled.p`
 `;
 
 export const Content = styled.div`
-  
   flex-direction: row;
   align-items: center;
   flex: 1;

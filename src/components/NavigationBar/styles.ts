@@ -14,9 +14,7 @@ export const Container = styled.div`
   height: 50px;
   width: 90%;
   margin-top: 10px;
-
-  position: absolute;
-  bottom: 16px;
+  margin-bottom: 16px;
 `;
 
 export const ItemContainer = styled.div`

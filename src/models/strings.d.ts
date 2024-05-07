@@ -116,4 +116,5 @@ type Strings = {
   guestName: string;
   performance: string;
   performanceEvaluation: string;
+  ranking: string;
 };

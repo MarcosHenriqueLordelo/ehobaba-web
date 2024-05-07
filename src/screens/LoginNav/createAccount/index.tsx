@@ -77,7 +77,7 @@ const CreateAccount: React.FC = () => {
   };
 
   const handleCreateUserData = () =>
-    createUserData(photo!, name, bornDay, position!, country);
+    createUserData(photo.file, name, bornDay, position!, country);
 
   return (
     <AuthLayout>
@@ -109,11 +109,6 @@ const CreateAccount: React.FC = () => {
                 <ChosePhotoLabel>{strings.addImage}</ChosePhotoLabel>
               </ChosePhotoButton>
             </label>
-            {/* 
-          <ChosePhotoButton onPress={handlePickImage}>
-            <ChosePhotoLabel>{strings.addImage}</ChosePhotoLabel>
-          </ChosePhotoButton>
-          */}
             <Spacer height={16} />
             <TextField
               label={strings.name}

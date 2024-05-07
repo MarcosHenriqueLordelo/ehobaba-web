@@ -93,7 +93,7 @@ const EditAccount: React.FC = () => {
     if (!user) return;
 
     editUserData({
-      photo: photo !== user.photoUrl ? photo : undefined,
+      photo: photo !== user.photoUrl ? photo.file : undefined,
       name: name !== user.name ? name : undefined,
       bornDay: bornDay !== user.bornDay ? bornDay : undefined,
       position: country !== user.country ? position : undefined,

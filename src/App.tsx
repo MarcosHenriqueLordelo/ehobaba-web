@@ -19,6 +19,7 @@ import EditAccount from "./screens/MainTab/editAccount";
 
 //Tabs
 import MainTab from "./tabs/MainTab";
+import BabaTab from "./tabs/BabaTab";
 
 // Components
 import Loading from "./components/Loading";
@@ -48,6 +49,7 @@ const App: React.FC = () => {
             <Route path='/createAccount' element={<CreateAccount />} />
             <Route path='/voteSession' element={<VoteSession />} />
             <Route path='/editAccount' element={<EditAccount />} />
+            <Route path='/baba' element={<BabaTab />} />
           </Routes>
         </Router>
       )}

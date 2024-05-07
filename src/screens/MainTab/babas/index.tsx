@@ -31,7 +31,7 @@ const Babas: React.FC<Proptypes> = ({ onNavigate }) => {
   }, []);
 
   const onSelectBaba = (id: string) => {
-    onNavigate("BabaTab");
+    onNavigate("/baba");
     getBaba(id);
   };
 

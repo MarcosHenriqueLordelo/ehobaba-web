@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -18,14 +17,12 @@ export const Label = styled.span`
 `;
 
 export const LeftContainer = styled.div`
-  
   flex-direction: row;
   align-items: center;
   padding-left: 16px;
 `;
 
 export const RightContainer = styled.div`
-  
   flex-direction: row-reverse;
   padding-right: 16px;
 `;

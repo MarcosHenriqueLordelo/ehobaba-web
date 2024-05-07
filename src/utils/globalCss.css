@@ -3,7 +3,6 @@
   padding: 0;
 
   scrollbar-width: thin;
-  overscroll-behavior: none;
 
   font-family: "Roboto Mono";
   font-size: 62.5%;
@@ -25,6 +24,16 @@
   }
 
   body {
-    background-color: #353941;
+    overflow-y: hidden;
+    max-width: 500px;
+    height: 100vh;
+  }
+
+  #root {
+    overflow-y: hidden;
+    max-width: 500px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 }

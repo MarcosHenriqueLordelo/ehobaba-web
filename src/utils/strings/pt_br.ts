@@ -122,6 +122,7 @@ const pt_br: Strings = {
   guestName: 'Nome do convidado',
   performance: 'Desempenho',
   performanceEvaluation: 'Avaliação de Desempenho',
+  ranking: 'Ranking',
 };
 
 export default pt_br;
