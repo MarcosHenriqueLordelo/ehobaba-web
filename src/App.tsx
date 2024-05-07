@@ -6,6 +6,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import useUi from "./contexts/ui/useUi";
 
 // Pages
+import CreateAccount from "./screens/LoginNav/createAccount";
+import CreateProfile from "./screens/LoginNav/createProfile";
+import ChangePassword from "./screens/LoginNav/changePassword";
+import ForgotPassword from "./screens/LoginNav/forgotPassword";
+import VerifyCode from "./screens/LoginNav/verifyCode";
 import ComponentLibrary from "./screens/ComponentLibrary";
 import Login from "./screens/LoginNav/login";
 import PerformanceEvaluation from "./screens/MainTab/performanceEvaluation";
@@ -15,6 +20,7 @@ import MainTab from "./tabs/MainTab";
 
 // Components
 import Loading from "./components/Loading";
+import SnackBar from "./components/SnackBar";
 
 const App: React.FC = () => {
   const { theme, loadingUser } = useUi();
@@ -33,9 +39,15 @@ const App: React.FC = () => {
               path='/performanceEvaluation'
               element={<PerformanceEvaluation />}
             />
+            <Route path='/verifyCode' element={<VerifyCode />} />
+            <Route path='/forgotPassword' element={<ForgotPassword />} />
+            <Route path='/changePassword' element={<ChangePassword />} />
+            <Route path='/createProfile' element={<CreateProfile />} />
+            <Route path='/createAccount' element={<CreateAccount />} />
           </Routes>
         </Router>
       )}
+      <SnackBar position='bottom' />
     </ThemeProvider>
   );
 };

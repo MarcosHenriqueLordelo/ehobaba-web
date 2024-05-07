@@ -12,6 +12,8 @@ export const Container = styled.div<InputProps>`
   input:invalid + label {
     color: ${(props) => props.theme.colors.error};
   }
+
+  ${({ modal }) => !modal && "width: 90%;"}
 `;
 
 export const Input = styled.input<InputProps>`

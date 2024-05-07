@@ -14,7 +14,7 @@ export const SelectContainer = styled.select<SelectProps>`
   border: none;
   transition: all 0.2s;
   border-bottom: 0.3rem solid transparent;
-  width: 30rem;
+  width: 100%;
   display: block;
 
   ${({ theme, selected, error }) =>
@@ -27,6 +27,7 @@ export const SelectContainer = styled.select<SelectProps>`
   &:focus {
     outline: none;
   }
+  margin-bottom: 16px;
 `;
 
 export const OptionItem = styled.option`
@@ -34,4 +35,13 @@ export const OptionItem = styled.option`
   padding: 1.5rem 2rem;
   background-color: ${(props) => props.theme.colors.section};
   color: ${(props) => props.theme.colors.font};
+`;
+
+export const Label = styled.label`
+  font-size: 16px;
+  color: ${(props) => props.theme.colors.action};
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-bottom: 8px;
+  cursor: text;
 `;

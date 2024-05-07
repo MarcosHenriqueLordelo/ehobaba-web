@@ -191,6 +191,7 @@ function ComponentLibrary() {
         ]}
         onChange={(value) => console.log(value)}
         value={0}
+        label="teste"
       />
       <div style={{ height: 10 }} />
       <Slider
