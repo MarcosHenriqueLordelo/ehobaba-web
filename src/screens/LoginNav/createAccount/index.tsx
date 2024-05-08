@@ -53,7 +53,7 @@ const CreateAccount: React.FC = () => {
 
   const [name, setName] = useState("");
   const [bornDay, setBornDay] = useState("");
-  const [country, setCountry] = useState("");
+  const [country, setCountry] = useState("cb");
   const [position, setPosition] = useState<Position>();
   const [photo, setPhoto] = useState<any>();
 

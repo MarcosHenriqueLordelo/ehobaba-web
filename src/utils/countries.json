@@ -1,4 +1,5 @@
 [
+  { "label": "Escolha o país", "value": "cb" },
   { "label": "Andorra", "value": "ad" },
   { "label": "United Arab Emirates", "value": "ae" },
   { "label": "Afghanistan", "value": "af" },

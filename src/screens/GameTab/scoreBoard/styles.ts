@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const ChipsContainer = styled.div`
@@ -22,6 +21,10 @@ export const DateLabel = styled.span`
 
 export const Content = styled.div`
   flex: 1;
+  background-color: ${({ theme }) => theme.colors.background};
+  overflow-y: scroll;
+  max-height: ${window.innerHeight - 150}px;
+  overscroll-behavior: none;
 `;
 
 export const ListContainer = styled.div`

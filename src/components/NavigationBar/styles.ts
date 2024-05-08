@@ -12,8 +12,8 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.section};
   height: 8%;
   width: 90%;
-  margin-top: 10px;
-  margin-bottom: 16px;
+  margin-top: auto;
+  margin-bottom: 1%;
 `;
 
 export const ItemContainer = styled.div`

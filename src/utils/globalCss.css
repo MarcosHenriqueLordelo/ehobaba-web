@@ -21,6 +21,7 @@
   div {
     display: flex;
     flex-direction: column;
+    overscroll-behavior: none;
   }
 
   body {
@@ -28,6 +29,7 @@
     max-width: 500px;
     height: 100vh;
     background-color: "#353941";
+    overscroll-behavior: none;
   }
 
   #root {
