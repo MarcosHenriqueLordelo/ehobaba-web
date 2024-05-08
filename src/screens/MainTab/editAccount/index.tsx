@@ -9,7 +9,6 @@ import {
   ChosePhotoLabel,
   Container,
   Content,
-  ScrollView,
   UserImage,
 } from "./styles";
 
@@ -104,7 +103,6 @@ const EditAccount: React.FC = () => {
   return (
     <AuthLayout>
       <Container>
-        <ScrollView>
           <AppBar
             onBack={() => navigate(-1)}
             primaryAction={() => (
@@ -174,7 +172,6 @@ const EditAccount: React.FC = () => {
               onClick={handleEditProfile}
             />
           </Content>
-        </ScrollView>
       </Container>
     </AuthLayout>
   );

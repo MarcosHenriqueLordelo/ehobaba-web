@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  
   background-color: ${({ theme }) => theme.colors.section};
   border-radius: 12px;
   margin-bottom: 10px;
   width: 90%;
   align-items: center;
+  align-self: center;
+  flex-direction: row;
 `;
 
 export const LeftContainer = styled.div`
@@ -19,6 +20,11 @@ export const Name = styled.p`
   font-size: 20px;
   font-weight: bold;
   text-transform: capitalize;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  width: 100%;
+  overflow: hidden;
 `;
 
 export const Info = styled.p`

@@ -4,7 +4,7 @@ import useUi from "../../../contexts/ui/useUi";
 import useBaba from "../../../contexts/baba/useBaba";
 import useUser from "../../../contexts/user/useUser";
 
-import { Container, HorizontalScroll, SectionLabel } from "./styles";
+import { Container, Content, HorizontalScroll, SectionLabel } from "./styles";
 
 import GameItemCard from "../../../components/GameItemCard";
 import Spacer from "../../../components/Spacer";
@@ -56,7 +56,7 @@ const Home: React.FC<Proptypes> = ({ onNavigate }) => {
         )}
         onPrimaryAction={refresh}
       />
-      <div>
+      <Content>
         <Spacer height={16} />
         <SectionLabel>{strings.lastMatches}</SectionLabel>
         <Spacer height={16} />
@@ -99,12 +99,14 @@ const Home: React.FC<Proptypes> = ({ onNavigate }) => {
               <PendingRateCard
                 cardData={game}
                 key={game.id}
-                onPress={() => onNavigate("/voteSession", { sessionData: game })}
+                onPress={() =>
+                  onNavigate("/voteSession", { sessionData: game })
+                }
               />
             ))
           : renderNoData(strings.noPendingRates)}
         <Spacer height={22} />
-      </div>
+      </Content>
 
       <PlayerModal
         open={selectedPlayer !== undefined}

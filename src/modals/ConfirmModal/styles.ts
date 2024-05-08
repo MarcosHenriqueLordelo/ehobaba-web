@@ -19,6 +19,7 @@ export const MessageLabel = styled.span`
   margin-top: 16px;
   margin-bottom: 4px;
   text-align: center;
+  font-size: 12px;
 `;
 
 export const ActionsContainer = styled.div`

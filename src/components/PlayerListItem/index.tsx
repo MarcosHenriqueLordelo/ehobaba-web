@@ -2,6 +2,7 @@ import React from "react";
 import {
   Container,
   Content,
+  DeleteBtnContainer,
   LeftContainer,
   Name,
   PositionLabel,
@@ -28,30 +29,25 @@ const PlayerListItem: React.FC<PropTypes> = ({
   const { theme } = useUi();
 
   return (
-    <Container>
-      {!onDelete ? (
-        <Content>
-          <LeftContainer>
-            <Name>{name}</Name>
-            <Score score={score} />
-          </LeftContainer>
-          <PositionLabel>{`${index}°`}</PositionLabel>
-        </Content>
-      ) : (
-        <Content>
-          <LeftContainer>
-            <Name>{name}</Name>
-            <Score score={score} />
-          </LeftContainer>
-          <PositionLabel>{`#${index < 10 && "0"}${index}`}</PositionLabel>
-          <IconButton
-            size={24}
-            renderIcon={() => (
-              <MdOutlineDelete color={theme.colors.font} size={24} />
-            )}
-          />
-        </Content>
-      )}
+    <Container onDelete={onDelete !== undefined}>
+      <Content>
+        <LeftContainer>
+          <Name>{name}</Name>
+          <Score score={score} />
+        </LeftContainer>
+        <PositionLabel>{`#${index < 10 && "0"}${index}`}</PositionLabel>
+        {onDelete && (
+          <DeleteBtnContainer>
+            <IconButton
+              size={16}
+              renderIcon={() => (
+                <MdOutlineDelete color={theme.colors.font} size={16} />
+              )}
+              onPress={onDelete}
+            />
+          </DeleteBtnContainer>
+        )}
+      </Content>
     </Container>
   );
 };

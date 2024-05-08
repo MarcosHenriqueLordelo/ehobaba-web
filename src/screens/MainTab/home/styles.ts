@@ -12,6 +12,8 @@ export const SectionLabel = styled.span`
   color: ${({ theme }) => theme.colors.font};
   text-transform: capitalize;
   margin-left: 16px;
+  margin-bottom: 16px;
+  margin: 16px 0px 16px 16px;
 `;
 
 export const HorizontalScroll = styled.div`
@@ -19,4 +21,11 @@ export const HorizontalScroll = styled.div`
   overflow-x: scroll;
   padding-left: 16px;
   scrollbar-width: none;
+  height: fit-content;
+  min-height: 100px;
+`;
+
+export const Content = styled.div`
+  overflow-y: scroll;
+  max-height: ${window.innerHeight - 140}px;
 `;

@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   cursor: pointer;
-
   background-color: ${({ theme }) => theme.colors.section};
   flex-direction: row;
   justify-content: space-between;
   border-radius: 12px;
   width: 90%;
-  height: 80px;
   margin-bottom: 10px;
+  min-height: 80px;
+  max-height: 80px;
 `;
 
 export const LeftContainer = styled.div`

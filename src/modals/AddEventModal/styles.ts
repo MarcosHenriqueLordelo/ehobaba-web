@@ -23,7 +23,7 @@ export const ListContainer = styled.div`
   flex-direction: row;
   margin-top: 10px;
   overflow-x: scroll;
-  scrollbar-width: 0;
+  scrollbar-width: none;
 `;
 
 export const ActionsContainer = styled.div`

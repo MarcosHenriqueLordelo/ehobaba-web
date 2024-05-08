@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 80%;
   height: 500px;
-  
-  ;
   align-items: center;
   background: linear-gradient(
     120deg,
@@ -13,10 +11,10 @@ export const Container = styled.div`
   );
   border-radius: 12px;
   border: 2px solid ${({ theme }) => theme.colors.action};
+  min-width: 300px;
 `;
 
 export const TopContainer = styled.div`
-  
   flex: 1;
   flex-direction: row;
   position: relative;
@@ -26,8 +24,6 @@ export const TopContainer = styled.div`
 export const BottomContainer = styled.div`
   justify-content: space-between;
   align-items: center;
-  
-  ;
   padding: 8px;
   width: 90%;
   border-top-width: 1px;
@@ -35,24 +31,17 @@ export const BottomContainer = styled.div`
   height: 110px;
 `;
 
-export const AvarageContainer = styled.div`
-  
-  ;
-`;
+export const AvarageContainer = styled.div``;
 
 export const Retangle = styled.div`
   width: 70px;
   height: 60px;
-  
-  ;
   justify-content: flex-end;
   align-items: center;
   position: relative;
 `;
 
 export const RetangleBackground = styled.div`
-  
-  ;
   position: absolute;
   background-color: ${({ theme }) => theme.colors.action};
   width: 100%;
@@ -61,8 +50,6 @@ export const RetangleBackground = styled.div`
 `;
 
 export const TriangleDown = styled.div`
-  
-  ;
   width: 0;
   height: 0;
   background-color: transparent;
@@ -85,23 +72,18 @@ export const AvarageLabel = styled.span`
 `;
 
 export const LeftContainer = styled.div`
-  
-  ;
   flex: 1;
   justify-content: space-between;
   padding-bottom: 8px;
 `;
 
 export const RightContainer = styled.div`
-  
-  ;
   align-items: flex-end;
   flex: 1;
   padding-top: 8px;
 `;
 
 export const MidRowContainer = styled.div`
-  
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
@@ -117,7 +99,6 @@ export const MidlTitle = styled.span`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.font};
   flex-wrap: wrap;
-  
 `;
 
 export const MidlValue = styled.span`
@@ -146,8 +127,6 @@ export const Flag = styled.img`
 `;
 
 export const RatingContainer = styled.div`
-  
-  ;
   justify-content: center;
   flex: 1;
   z-index: 1;

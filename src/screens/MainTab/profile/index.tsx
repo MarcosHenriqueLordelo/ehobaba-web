@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 import AppBar from "../../../components/AppBar";
 import PlayerCard from "../../../components/PlayerCard";
-import Loading from "../../../components/Loading";
+import Loading, { Loader } from "../../../components/Loading";
 
 import useUi from "../../../contexts/ui/useUi";
 import useUser from "../../../contexts/user/useUser";
@@ -15,12 +15,12 @@ interface Proptypes {
 }
 
 const Profile: React.FC<Proptypes> = ({ onNavigate }) => {
-  const { strings, loading, setErrors, theme } = useUi();
+  const { strings, loading, theme } = useUi();
   const { info, getUserInfo } = useUser();
   const captureRef = useRef(null);
 
   useEffect(() => {
-    getUserInfo();
+    if (info === undefined) getUserInfo();
   }, []);
 
   return (
@@ -31,7 +31,9 @@ const Profile: React.FC<Proptypes> = ({ onNavigate }) => {
         onSecondaryAction={() => onNavigate("/editAccount")}
       />
       {loading ? (
-        <Loading />
+        <Content>
+          <Loader />
+        </Content>
       ) : (
         <Content>
           {info && <PlayerCard data={info} captureRef={captureRef} />}
