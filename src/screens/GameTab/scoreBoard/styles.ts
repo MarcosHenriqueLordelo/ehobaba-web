@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   flex: 1;
@@ -24,21 +24,8 @@ export const Content = styled.div`
   flex: 1;
 `;
 
-export const ListContainer = styled.div``;
-
-export const CaptureContainer = styled.div`
-  width: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background-color: ${({ theme }) => theme.colors.background};
-`;
-
-export const CaptureDateLabel = styled.span`
-  font-size: 16px;
-  font-weight: 400;
-  color: ${({ theme }) => theme.colors.font};
-  margin-left: 16px;
-  margin-top: -20px;
-  margin-bottom: 16px;
+export const ListContainer = styled.div`
+  flex: 1;
+  overflow-y: scroll;
+  max-height: ${window.innerHeight - 150}px;
 `;

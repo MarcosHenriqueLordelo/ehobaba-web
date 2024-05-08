@@ -27,9 +27,6 @@ const PlayerName = styled.span`
 `;
 
 const PlayerImgItem: React.FC<PropTypes> = ({ data, onPress }) => {
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
 
   return (
     <Container onClick={onPress}>

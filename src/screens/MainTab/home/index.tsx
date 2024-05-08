@@ -44,7 +44,7 @@ const Home: React.FC<Proptypes> = ({ onNavigate }) => {
 
   const handleGamePressed = (gameId: string, babaId: string) => {
     getGame({ gameId, babaId });
-    onNavigate("GameTab");
+    onNavigate("/game");
   };
 
   return (

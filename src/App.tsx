@@ -1,6 +1,11 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 // Contexts
 import useUi from "./contexts/ui/useUi";
@@ -20,6 +25,7 @@ import EditAccount from "./screens/MainTab/editAccount";
 //Tabs
 import MainTab from "./tabs/MainTab";
 import BabaTab from "./tabs/BabaTab";
+import GameTab from "./tabs/GameTab";
 
 // Components
 import Loading from "./components/Loading";
@@ -50,6 +56,9 @@ const App: React.FC = () => {
             <Route path='/voteSession' element={<VoteSession />} />
             <Route path='/editAccount' element={<EditAccount />} />
             <Route path='/baba' element={<BabaTab />} />
+            <Route path='/game' element={<GameTab />} />
+
+            <Route path='/*' element={<Navigate to='/' />} />
           </Routes>
         </Router>
       )}

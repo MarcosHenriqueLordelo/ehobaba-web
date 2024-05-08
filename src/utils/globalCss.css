@@ -27,6 +27,7 @@
     overflow-y: hidden;
     max-width: 500px;
     height: 100vh;
+    background-color: "#353941";
   }
 
   #root {
@@ -35,5 +36,8 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: "#353941";
   }
+
+  background-color: "#353941";
 }

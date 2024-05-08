@@ -12,7 +12,7 @@ import JoinBabaModal from "../../../modals/JoinBabaModal";
 import CreateBabaModal from "../../../modals/CreateBabaModal";
 
 import BabaListItem from "../../../components/BabaListItem";
-import Loading from "../../../components/Loading";
+import { Loader } from "../../../components/Loading";
 import AppBar from "../../../components/AppBar";
 
 interface Proptypes {
@@ -47,7 +47,11 @@ const Babas: React.FC<Proptypes> = ({ onNavigate }) => {
         onSecondaryAction={() => setJoinBaba(true)}
       />
       {loading ? (
-        <Loading />
+        <div
+          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+        >
+          <Loader />
+        </div>
       ) : (
         <ListContainer>
           {babas

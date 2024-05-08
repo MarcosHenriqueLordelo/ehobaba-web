@@ -231,8 +231,6 @@ export const UserProvider: React.FC<DefaultProps> = ({ children }) => {
 
         const { data } = await userApi.uploadImage(form);
 
-        console.log(data);
-
         photoUrl = data;
       }
 
@@ -257,7 +255,6 @@ export const UserProvider: React.FC<DefaultProps> = ({ children }) => {
 
       getUserInfo();
     } catch (err: any) {
-      console.log(err);
       if (err.response)
         if (err.response.data) setErrors(err.response.data);
         else {

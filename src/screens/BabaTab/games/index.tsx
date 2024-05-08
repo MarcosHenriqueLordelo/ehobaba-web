@@ -49,7 +49,7 @@ const Games: React.FC<PropTypes> = ({ onNavigate }) => {
               key={game.id}
               onPress={() => {
                 getGame({ babaId: baba!.id, gameId: game.id });
-                onNavigate("/gameTab");
+                onNavigate("/game");
               }}
             />
           ))}

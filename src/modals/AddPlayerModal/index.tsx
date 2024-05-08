@@ -39,7 +39,7 @@ const AddPlayerModal: React.FC<PropTypes> = ({ open, onClose }) => {
     if (!game) return;
 
     getCast(game.babaId);
-  }, [game, getCast]);
+  }, [game]);
 
   useEffect(() => {
     if (!cast || !players) return;
