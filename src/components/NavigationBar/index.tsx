@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import IconButton from "../IconButton";
 
-import { Container, IconContainer, ItemContainer, ItemLabel } from "./styles";
+import {
+  Container,
+  ContainerX,
+  IconContainer,
+  ItemContainer,
+  ItemLabel,
+} from "./styles";
 
 type ItemType = {
   label: string;
@@ -42,7 +48,11 @@ const NavigationBar: React.FC<PropTypes> = ({
       </ItemContainer>
     ));
 
-  return <Container>{renderItems()}</Container>;
+  return (
+    <ContainerX>
+      <Container>{renderItems()}</Container>
+    </ContainerX>
+  );
 };
 
 export default NavigationBar;

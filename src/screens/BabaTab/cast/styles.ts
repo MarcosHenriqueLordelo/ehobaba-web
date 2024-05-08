@@ -5,7 +5,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  padding-top: 70px;
+  padding-bottom: 50px;
   flex: 1;
-  overflow-y: scroll;
-  max-height: ${window.innerHeight - 150}px;
 `;

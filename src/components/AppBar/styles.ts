@@ -6,6 +6,9 @@ export const Container = styled.div`
   justify-content: space-between;
   height: 64px;
   width: 100%;
+  position: fixed;
+  z-index: 10;
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const Label = styled.span`

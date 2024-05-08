@@ -16,6 +16,12 @@ export const Name = styled.p`
   text-transform: capitalize;
   margin-left: 16px;
   flex: 1;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  width: 100%;
+  overflow: hidden;
 `;
 
 export const Content = styled.div`

@@ -4,6 +4,16 @@ interface ItemProps {
   selected?: boolean;
 }
 
+export const ContainerX = styled.div`
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-bottom: 16px;
+  background-color: ${({ theme }) => theme.colors.background};
+`;
+
 export const Container = styled.div`
   flex-direction: row;
   justify-content: space-around;
@@ -13,7 +23,7 @@ export const Container = styled.div`
   height: 50px;
   width: 90%;
   margin-top: auto;
-  margin-bottom: 16px;
+  // margin-bottom: 16px;
 `;
 
 export const ItemContainer = styled.div`
