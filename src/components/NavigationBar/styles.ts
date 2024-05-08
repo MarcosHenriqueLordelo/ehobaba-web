@@ -7,22 +7,22 @@ interface ItemProps {
 export const Container = styled.div`
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
   align-self: center;
   border-radius: 12px;
   background-color: ${({ theme }) => theme.colors.section};
-  height: 50px;
+  height: 8%;
   width: 90%;
   margin-top: 10px;
   margin-bottom: 16px;
 `;
 
 export const ItemContainer = styled.div`
-  cursor: pointer;
-  pointer-events: initial;
-
-  align-items: center;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+cursor: pointer;
+pointer-events: initial;
+height: 20%;
+-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+margin-bottom: 10%;
+margin-top: auto;
 `;
 
 export const ItemLabel = styled.p<ItemProps>`
@@ -39,7 +39,6 @@ export const ItemLabel = styled.p<ItemProps>`
   ${({ selected }) =>
     selected &&
     `border-radius:50px;
-     transform:translateY(-8px);
      opacity: 1;`}
 `;
 
@@ -47,9 +46,8 @@ export const IconContainer = styled.div<ItemProps>`
   transform: translateY(8px);
   ${({ selected, theme }) =>
     selected &&
-    `border-radius:50px;
+    `border-radius:40px;
      background-color: ${theme.colors.background};
-     transform:translateY(-18px) scale(1.1);`}
-  padding: 8px;
+     transform:translateY(-10px) scale(1.1);`}
   transition: all 0.5s;
 `;
