@@ -26,6 +26,7 @@ export const HorizontalScroll = styled.div`
 `;
 
 export const Content = styled.div`
-  overflow-y: scroll;
-  max-height: ${window.innerHeight - 140}px;
+  padding-top: 70px;
+  padding-bottom: 50px;
+  flex: 1;
 `;

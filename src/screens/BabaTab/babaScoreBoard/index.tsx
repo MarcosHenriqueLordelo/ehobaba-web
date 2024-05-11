@@ -3,13 +3,12 @@ import React, { useState } from "react";
 import AppBar from "../../../components/AppBar";
 import Loading from "../../../components/Loading";
 import PlayerListItem from "../../../components/PlayerListItem";
-import Spacer from "../../../components/Spacer";
 import TypeSelectableChip from "../../../components/TypeSelectableChip";
 
 import useUi from "../../../contexts/ui/useUi";
 import useBaba from "../../../contexts/baba/useBaba";
 
-import { ChipsContainer, Container, Content, ListContainer } from "./styles";
+import { ChipsContainer, Container, Content } from "./styles";
 
 import AddPlayerModal from "../../../modals/AddPlayerModal";
 
@@ -68,16 +67,13 @@ const BabaScoreBoard: React.FC<PropTypes> = ({ onNavigate }) => {
                 onPress={() => setSelectedType("des")}
               />
             </ChipsContainer>
-            <ListContainer>
-              {getList().map((player, index) => (
-                <PlayerListItem
-                  itemData={player}
-                  key={player.id}
-                  index={index + 1}
-                />
-              ))}
-              <Spacer height={20} />
-            </ListContainer>
+            {getList().map((player, index) => (
+              <PlayerListItem
+                itemData={player}
+                key={player.id}
+                index={index + 1}
+              />
+            ))}
           </Content>
         )}
         <AddPlayerModal

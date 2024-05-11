@@ -8,10 +8,9 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  padding-top: 70px;
   flex: 1;
   align-items: center;
-  max-height: ${window.innerHeight - 90}px;
-  overflow-y: scroll;
 `;
 
 export const UserImage = styled.img`

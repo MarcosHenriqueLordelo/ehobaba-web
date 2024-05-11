@@ -6,6 +6,8 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  padding-top: 40px;
+  padding-bottom: 50px;
   flex: 1;
   justify-content: center;
   align-items: center;

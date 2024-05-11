@@ -53,55 +53,53 @@ const RatingBoard: React.FC<PropTypes> = ({ onNavigate }) => {
 
   return (
     <Container>
-      <Container>
-        <AppBar
-          title={game?.location}
-          onBack={() => onNavigate("back")}
-          onPrimaryAction={toggleOpenForRating}
-          primaryAction={
-            isAdmin()
-              ? game?.openForRating
-                ? () => <MdLockOpen size={24} color={theme.colors.action} />
-                : () => <MdLock size={24} color={theme.colors.action} />
-              : undefined
-          }
-        />
-        {game && (
-          <DateLabel>
-            {moment.unix(game.timestamp).format("DD/MM/YYYY")}
-          </DateLabel>
-        )}
-        {loading ? (
-          <Loading />
-        ) : (
-          <ListContainer style={{ flex: 1 }}>
-            {game?.openForRating && isRatingPending && (
-              <div
-                style={{
-                  alignItems: "center",
-                  marginTop: 16,
-                  marginBottom: 16,
-                }}
-              >
-                <Button label={strings.doVote} onClick={handleOnVote} />
-              </div>
-            )}
-            {ratings && ratings.length > 0
-              ? getList().map((rating, index) => (
-                  <RatingListItem
-                    key={rating.playerId}
-                    itemData={rating}
-                    index={index + 1}
-                  />
-                ))
-              : renderNoData(
-                  game?.openForRating
-                    ? strings.ratingOpenButNoRated
-                    : strings.ratingClosed
-                )}
-          </ListContainer>
-        )}
-      </Container>
+      <AppBar
+        title={game?.location}
+        onBack={() => onNavigate("back")}
+        onPrimaryAction={toggleOpenForRating}
+        primaryAction={
+          isAdmin()
+            ? game?.openForRating
+              ? () => <MdLockOpen size={24} color={theme.colors.action} />
+              : () => <MdLock size={24} color={theme.colors.action} />
+            : undefined
+        }
+      />
+      {game && (
+        <DateLabel>
+          {moment.unix(game.timestamp).format("DD/MM/YYYY")}
+        </DateLabel>
+      )}
+      {loading ? (
+        <Loading />
+      ) : (
+        <ListContainer style={{ flex: 1 }}>
+          {game?.openForRating && isRatingPending && (
+            <div
+              style={{
+                alignItems: "center",
+                marginTop: 16,
+                marginBottom: 16,
+              }}
+            >
+              <Button label={strings.doVote} onClick={handleOnVote} />
+            </div>
+          )}
+          {ratings && ratings.length > 0
+            ? getList().map((rating, index) => (
+                <RatingListItem
+                  key={rating.playerId}
+                  itemData={rating}
+                  index={index + 1}
+                />
+              ))
+            : renderNoData(
+                game?.openForRating
+                  ? strings.ratingOpenButNoRated
+                  : strings.ratingClosed
+              )}
+        </ListContainer>
+      )}
     </Container>
   );
 };

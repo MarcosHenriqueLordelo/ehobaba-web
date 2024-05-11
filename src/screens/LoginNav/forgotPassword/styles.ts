@@ -5,13 +5,10 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
-export const ScrollView = styled.div`
-  width: 100%;
-`;
-
 export const Content = styled.div`
   flex: 1;
   align-items: center;
+  padding-top: 70px;
 `;
 
 export const Logo = styled.img`
@@ -25,6 +22,7 @@ export const Label = styled.span`
   font-size: 16px;
   width: 80%;
   padding-left: 6px;
+  margin-bottom: 16px;
 `;
 
 export const LinkContainer = styled.div`

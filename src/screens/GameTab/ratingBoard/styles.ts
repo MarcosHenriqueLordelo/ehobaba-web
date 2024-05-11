@@ -6,7 +6,7 @@ export const Container = styled.div`
 `;
 
 export const ListContainer = styled.div`
+  padding-top: 70px;
+  padding-bottom: 70px;
   flex: 1;
-  overflow-y: scroll;
-  max-height: ${window.innerHeight - 150}px;
 `;

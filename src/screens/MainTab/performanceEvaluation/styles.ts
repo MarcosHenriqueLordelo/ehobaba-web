@@ -6,11 +6,9 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  padding-top: 70px;
+  padding-bottom: 50px;
   flex: 1;
-`;
-
-export const ScrollView = styled.div`
-  width: 100%;
 `;
 
 interface ActionsContainerProps {
@@ -21,9 +19,10 @@ export const ActionsContainer = styled.div<ActionsContainerProps>`
   flex-direction: row;
   justify-content: ${({ center }) => (center ? "center" : "space-around")};
   margin: 16px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 `;
-
-export const ScrollContainer = styled.div``;
 
 export const UserImage = styled.img`
   width: 100px;

@@ -10,7 +10,6 @@ import {
   Content,
   ConditionLabel,
   ConditionsView,
-  ScrollView,
 } from "./styles";
 
 import Spacer from "../../../components/Spacer";
@@ -28,6 +27,7 @@ import {
   hasOneSpecialCharacter,
   hasOneUpperCase,
 } from "../../../utils/passwordValidator";
+import UnAuthLayout from "../../../layouts/unAuthLyt";
 
 const CreateProfile: React.FC = () => {
   const { createAccount } = useUser();
@@ -66,8 +66,8 @@ const CreateProfile: React.FC = () => {
   const onBack = () => navigate(-1);
 
   return (
-    <Container>
-      <ScrollView>
+    <UnAuthLayout>
+      <Container>
         <AppBar onBack={onBack} title={strings.createProfile} />
         <Content>
           <Logo src={logo} />
@@ -124,8 +124,8 @@ const CreateProfile: React.FC = () => {
             onClick={handleCreateUserData}
           />
         </Content>
-      </ScrollView>
-    </Container>
+      </Container>
+    </UnAuthLayout>
   );
 };
 

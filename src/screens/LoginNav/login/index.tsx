@@ -30,7 +30,7 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigateToCreateAccount = () => navigate("/createAccount");
+  const navigateToCreateAccount = () => navigate("/createProfile");
 
   const navigateToForgotPassword = () => navigate("/forgotPassword");
 

@@ -21,13 +21,9 @@ export const DateLabel = styled.span`
 `;
 
 export const Content = styled.div`
+  padding-top: 70px;
+  padding-bottom: 70px;
   flex: 1;
-`;
-
-export const ListContainer = styled.div`
-  flex: 1;
-  overflow-y: scroll;
-  max-height: ${window.innerHeight - 192}px;
 `;
 
 export const CaptureDateLabel = styled.span`

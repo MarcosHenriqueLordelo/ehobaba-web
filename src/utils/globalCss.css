@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
 
-  scrollbar-width: thin;
+  scrollbar-width: none;
 
   font-family: "Roboto Mono";
   font-size: 62.5%;
@@ -14,6 +14,7 @@
   @media (max-width: 900px) {
     font-size: 50%;
   }
+
   @media (min-width: 1800px) {
     font-size: 75%;
   }
@@ -26,20 +27,18 @@
 
   body {
     overflow-y: hidden;
-    max-width: 500px;
     height: 100vh;
-    background-color: "#353941";
+    background-color: #353941;
     overscroll-behavior: none;
   }
 
   #root {
     overflow-y: hidden;
-    max-width: 500px;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: "#353941";
+    background-color: #353941;
+    align-items: center;
   }
-
-  background-color: "#353941";
 }

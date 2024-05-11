@@ -9,13 +9,13 @@ interface LabelProps {
 }
 
 export const Container = styled.div<ContainerProps>`
-  
   background-color: ${({ color }) => color};
   width: 80%;
   border-radius: 10px;
   align-items: center;
   justify-content: center;
   height: 40px;
+  cursor: pointer;
 `;
 
 export const Label = styled.p<LabelProps>`

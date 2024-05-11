@@ -7,8 +7,6 @@ import {
   Content,
   ImageContainer,
   PlayerName,
-  ScrollContainer,
-  ScrollView,
 } from "./styles";
 
 import useUi from "../../../contexts/ui/useUi";
@@ -18,7 +16,6 @@ import AppBar from "../../../components/AppBar";
 import Loading from "../../../components/Loading";
 import Button from "../../../components/Button";
 import Slider from "../../../components/Slider";
-import Spacer from "../../../components/Spacer";
 import MyImage from "../../../components/MyImage";
 
 import AuthLayout from "../../../layouts/authLyt";
@@ -64,72 +61,67 @@ const PerformanceEvaluation: React.FC = () => {
   return (
     <AuthLayout>
       <Container>
-        <ScrollView>
-          <AppBar
-            title={strings.performanceEvaluation}
-            onBack={() => navigate(-1)}
-          />
+        <AppBar
+          title={strings.performanceEvaluation}
+          onBack={() => navigate(-1)}
+        />
+        {loading || !playerToBeRatedData ? (
+          <Loading />
+        ) : (
           <Content>
-            {loading || !playerToBeRatedData ? (
-              <Loading />
-            ) : (
-              <ScrollContainer>
-                <ImageContainer>
-                  <MyImage
-                    size={100}
-                    rounded
-                    uri={playerToBeRatedData.playerData.photoUrl}
-                  />
-                </ImageContainer>
-                <PlayerName>{playerToBeRatedData.playerData.name}</PlayerName>
-                <Slider
-                  onChange={(value) => handleChange(value, "vel")}
-                  value={ratings.vel}
-                  label={strings.velocity}
-                />
-                <Slider
-                  onChange={(value) => handleChange(value, "chu")}
-                  value={ratings.chu}
-                  label={strings.kick}
-                />
-                <Slider
-                  onChange={(value) => handleChange(value, "pas")}
-                  value={ratings.pas}
-                  label={strings.pass}
-                />
-                <Slider
-                  onChange={(value) => handleChange(value, "mar")}
-                  value={ratings.mar}
-                  label={strings.marking}
-                />
-                <Slider
-                  onChange={(value) => handleChange(value, "dri")}
-                  value={ratings.dri}
-                  label={strings.dribble}
-                />
-                <Slider
-                  onChange={(value) => handleChange(value, "rac")}
-                  value={ratings.rac}
-                  label={strings.guts}
-                />
-                <Spacer height={20} />
-              </ScrollContainer>
-            )}
+            <ImageContainer>
+              <MyImage
+                size={100}
+                rounded
+                uri={playerToBeRatedData.playerData.photoUrl}
+              />
+            </ImageContainer>
+            <PlayerName>{playerToBeRatedData.playerData.name}</PlayerName>
+            <Slider
+              onChange={(value) => handleChange(value, "vel")}
+              value={ratings.vel}
+              label={strings.velocity}
+            />
+            <Slider
+              onChange={(value) => handleChange(value, "chu")}
+              value={ratings.chu}
+              label={strings.kick}
+            />
+            <Slider
+              onChange={(value) => handleChange(value, "pas")}
+              value={ratings.pas}
+              label={strings.pass}
+            />
+            <Slider
+              onChange={(value) => handleChange(value, "mar")}
+              value={ratings.mar}
+              label={strings.marking}
+            />
+            <Slider
+              onChange={(value) => handleChange(value, "dri")}
+              value={ratings.dri}
+              label={strings.dribble}
+            />
+            <Slider
+              onChange={(value) => handleChange(value, "rac")}
+              value={ratings.rac}
+              label={strings.guts}
+            />
           </Content>
-          <ActionsContainer>
-            <Button
-              label={strings.cancel}
-              dark
-              onClick={() => navigate(-1)}
-              disabled={loading}
-            />
-            <Button
-              label={strings.save}
-              loading={loading}
-              onClick={handleFinish}
-            />
-          </ActionsContainer>
-        </ScrollView>
+        )}
+        <ActionsContainer>
+          <Button
+            label={strings.cancel}
+            dark
+            onClick={() => navigate(-1)}
+            disabled={loading}
+          />
+          <Button
+            label={strings.save}
+            loading={loading}
+            onClick={handleFinish}
+          />
+        </ActionsContainer>
       </Container>
     </AuthLayout>
   );

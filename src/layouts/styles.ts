@@ -6,4 +6,13 @@ export const Container = styled.div`
   display: flex;
   background-color: ${({ theme }) => theme.colors.background};
   overflow-y: scroll;
+  position: relative;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+
+  @media (min-width: 500px) {
+    width: 500px;
+  }
 `;

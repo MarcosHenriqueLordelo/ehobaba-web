@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import AppBar from "../../../components/AppBar";
 import Loading from "../../../components/Loading";
 import PlayerListItem from "../../../components/PlayerListItem";
-import Spacer from "../../../components/Spacer";
 import TypeSelectableChip from "../../../components/TypeSelectableChip";
 import moment from "moment";
 
@@ -11,13 +10,7 @@ import useGame from "../../../contexts/game/useGame";
 import useUi from "../../../contexts/ui/useUi";
 import useUser from "../../../contexts/user/useUser";
 
-import {
-  ChipsContainer,
-  Container,
-  Content,
-  DateLabel,
-  ListContainer,
-} from "./styles";
+import { ChipsContainer, Container, Content, DateLabel } from "./styles";
 
 import AddPlayerModal from "../../../modals/AddPlayerModal";
 import ConfirmModal from "../../../modals/ConfirmModal";
@@ -72,82 +65,75 @@ const ScoreBoard: React.FC<PropTypes> = ({ onNavigate }) => {
 
   return (
     <Container>
-      <Container>
-        <AppBar
-          title={game?.location}
-          onBack={() => onNavigate("back")}
-          primaryAction={
-            isAdmin()
-              ? () => <MdPersonAdd size={24} color={theme.colors.action} />
-              : undefined
-          }
-          onPrimaryAction={() => setAddPlayerModal(true)}
-        />
-        {game && (
-          <DateLabel>
-            {moment.unix(game.timestamp).format("DD/MM/YYYY")}
-          </DateLabel>
-        )}
-        {loading ? (
-          <Loading />
-        ) : (
-          <Content>
-            <ChipsContainer>
-              <TypeSelectableChip
-                selected={selectedType === "gol"}
-                label={strings.gol}
-                onPress={() => setSelectedType("gol")}
-              />
-              <TypeSelectableChip
-                selected={selectedType === "ass"}
-                label={strings.ass}
-                onPress={() => setSelectedType("ass")}
-              />
-              <TypeSelectableChip
-                selected={selectedType === "def"}
-                label={strings.def}
-                onPress={() => setSelectedType("def")}
-              />
-              <TypeSelectableChip
-                selected={selectedType === "fal"}
-                label={strings.fal}
-                onPress={() => setSelectedType("fal")}
-              />
-              <TypeSelectableChip
-                selected={selectedType === "des"}
-                label={strings.des}
-                onPress={() => setSelectedType("des")}
-              />
-            </ChipsContainer>
-            <ListContainer>
-              {getList().map((player, index) => (
-                <PlayerListItem
-                  itemData={player}
-                  key={player.id}
-                  index={index + 1}
-                  onDelete={
-                    canDelete()
-                      ? () => handleDeletePressed(player.id)
-                      : undefined
-                  }
-                />
-              ))}
-              <Spacer height={20} />
-            </ListContainer>
-          </Content>
-        )}
-        <AddPlayerModal
-          onClose={() => setAddPlayerModal(false)}
-          open={addPlayerModal}
-        />
-        <ConfirmModal
-          onClose={() => setConfirmModal(false)}
-          callback={onDeletePlayer}
-          message={strings.removePlayerFromGameMessage}
-          open={confirmModal}
-          title={strings.removePlayerFromGameTitle}
-        />
-      </Container>
+      <AppBar
+        title={game?.location}
+        onBack={() => onNavigate("back")}
+        primaryAction={
+          isAdmin()
+            ? () => <MdPersonAdd size={24} color={theme.colors.action} />
+            : undefined
+        }
+        onPrimaryAction={() => setAddPlayerModal(true)}
+      />
+      {game && (
+        <DateLabel>
+          {moment.unix(game.timestamp).format("DD/MM/YYYY")}
+        </DateLabel>
+      )}
+      {loading ? (
+        <Loading />
+      ) : (
+        <Content>
+          <ChipsContainer>
+            <TypeSelectableChip
+              selected={selectedType === "gol"}
+              label={strings.gol}
+              onPress={() => setSelectedType("gol")}
+            />
+            <TypeSelectableChip
+              selected={selectedType === "ass"}
+              label={strings.ass}
+              onPress={() => setSelectedType("ass")}
+            />
+            <TypeSelectableChip
+              selected={selectedType === "def"}
+              label={strings.def}
+              onPress={() => setSelectedType("def")}
+            />
+            <TypeSelectableChip
+              selected={selectedType === "fal"}
+              label={strings.fal}
+              onPress={() => setSelectedType("fal")}
+            />
+            <TypeSelectableChip
+              selected={selectedType === "des"}
+              label={strings.des}
+              onPress={() => setSelectedType("des")}
+            />
+          </ChipsContainer>
+          {getList().map((player, index) => (
+            <PlayerListItem
+              itemData={player}
+              key={player.id}
+              index={index + 1}
+              onDelete={
+                canDelete() ? () => handleDeletePressed(player.id) : undefined
+              }
+            />
+          ))}
+        </Content>
+      )}
+      <AddPlayerModal
+        onClose={() => setAddPlayerModal(false)}
+        open={addPlayerModal}
+      />
+      <ConfirmModal
+        onClose={() => setConfirmModal(false)}
+        callback={onDeletePlayer}
+        message={strings.removePlayerFromGameMessage}
+        open={confirmModal}
+        title={strings.removePlayerFromGameTitle}
+      />
     </Container>
   );
 };

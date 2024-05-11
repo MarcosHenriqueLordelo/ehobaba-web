@@ -8,8 +8,6 @@ import {
   Content,
   ImageContainer,
   PlayerName,
-  ScrollContainer,
-  ScrollView,
 } from "./styles";
 import { DateLabel } from "../../GameTab/scoreBoard/styles";
 
@@ -24,10 +22,6 @@ import Slider from "../../../components/Slider";
 import Spacer from "../../../components/Spacer";
 import MyImage from "../../../components/MyImage";
 import AuthLayout from "../../../layouts/authLyt";
-
-type NavParams = {
-  Params: { sessionData: PendingRate; reloadGame?: boolean };
-};
 
 const VoteSession: React.FC = () => {
   const { user, getPendingRates } = useUser();
@@ -85,68 +79,63 @@ const VoteSession: React.FC = () => {
   return (
     <AuthLayout>
       <Container>
-        <ScrollView>
-          <AppBar
-            title={`${sessionData.location} - ${strings.vote}`}
-            onBack={() => navigate(-1)}
-          />
-          <DateLabel>
-            {moment.unix(sessionData.timestamp).format("DD/MM/YYYY")}
-          </DateLabel>
-          <Content>
-            {loading ? (
-              <Loading />
-            ) : (
-              availablePlayers &&
-              ratings && (
-                <ScrollContainer>
-                  <ImageContainer>
-                    {availablePlayers[currentPlayer] && (
-                      <MyImage
-                        size={100}
-                        rounded
-                        uri={availablePlayers[currentPlayer].photoUrl}
-                      />
-                    )}
-                  </ImageContainer>
-                  <PlayerName>
-                    {availablePlayers[currentPlayer].name}
-                  </PlayerName>
-                  <Slider
-                    onChange={(value) => handleChange(value)}
-                    value={ratings[availablePlayers[currentPlayer].id]}
-                    label={strings.performance}
+        <AppBar
+          title={`${sessionData.location} - ${strings.vote}`}
+          onBack={() => navigate(-1)}
+        />
+        <DateLabel>
+          {moment.unix(sessionData.timestamp).format("DD/MM/YYYY")}
+        </DateLabel>
+
+        {loading ? (
+          <Loading />
+        ) : (
+          availablePlayers &&
+          ratings && (
+            <Content>
+              <ImageContainer>
+                {availablePlayers[currentPlayer] && (
+                  <MyImage
+                    size={100}
+                    rounded
+                    uri={availablePlayers[currentPlayer].photoUrl}
                   />
-                  <Spacer height={20} />
-                </ScrollContainer>
-              )
-            )}
-          </Content>
-          <ActionsContainer center={currentPlayer === 0}>
-            {currentPlayer !== 0 && (
-              <Button
-                label={strings.goBack}
-                dark
-                onClick={() => setCurrentPlayer(currentPlayer - 1)}
-                disabled={loading}
+                )}
+              </ImageContainer>
+              <PlayerName>{availablePlayers[currentPlayer].name}</PlayerName>
+              <Slider
+                onChange={(value) => handleChange(value)}
+                value={ratings[availablePlayers[currentPlayer].id]}
+                label={strings.performance}
               />
-            )}
+              <Spacer height={20} />
+            </Content>
+          )
+        )}
+        <ActionsContainer center={currentPlayer === 0}>
+          {currentPlayer !== 0 && (
             <Button
-              label={
-                currentPlayer < availablePlayers!.length - 1
-                  ? strings.goFoward
-                  : strings.save
-              }
-              dark={currentPlayer !== availablePlayers!.length - 1}
-              loading={loading}
-              onClick={() =>
-                currentPlayer < availablePlayers!.length - 1
-                  ? setCurrentPlayer(currentPlayer + 1)
-                  : handleFinish()
-              }
+              label={strings.goBack}
+              dark
+              onClick={() => setCurrentPlayer(currentPlayer - 1)}
+              disabled={loading}
             />
-          </ActionsContainer>
-        </ScrollView>
+          )}
+          <Button
+            label={
+              currentPlayer < availablePlayers!.length - 1
+                ? strings.goFoward
+                : strings.save
+            }
+            dark={currentPlayer !== availablePlayers!.length - 1}
+            loading={loading}
+            onClick={() =>
+              currentPlayer < availablePlayers!.length - 1
+                ? setCurrentPlayer(currentPlayer + 1)
+                : handleFinish()
+            }
+          />
+        </ActionsContainer>
       </Container>
     </AuthLayout>
   );

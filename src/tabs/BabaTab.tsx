@@ -31,8 +31,11 @@ const BabaTab: React.FC = () => {
     }
   }, [currentTab]);
 
-  const handleNavigation = (screen: string) =>
-    screen === "back" ? navigate(-1) : navigate(screen);
+  const handleNavigation = useCallback(
+    (screen: string, params?: any) =>
+      screen === "back" ? navigate(-1) : navigate(screen, { state: params }),
+    []
+  );
 
   return (
     <AuthLayout>

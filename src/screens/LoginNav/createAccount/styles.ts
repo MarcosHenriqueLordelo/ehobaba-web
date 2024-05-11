@@ -5,14 +5,11 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
-export const ScrollView = styled.div`
-  width: 100%;
-`;
-
 export const Content = styled.div`
   flex: 1;
   align-items: center;
   justify-content: center;
+  padding-top: 70px;
 `;
 
 export const UserImage = styled.img`

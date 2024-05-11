@@ -11,7 +11,6 @@ import {
   Label,
   LinkContainer,
   HaveACodeLabel,
-  ScrollView,
 } from "./styles";
 
 import Spacer from "../../../components/Spacer";
@@ -51,32 +50,30 @@ const ForgotPassword: React.FC = () => {
   return (
     <UnAuthLayout>
       <Container>
-        <ScrollView>
-          <AppBar onBack={onBack} title={strings.forgotPassword} />
-          <Content>
-            <Logo src={logo} />
-            <Spacer height={60} />
-            <Label>{strings.fillEmail}</Label>
-            <TextField
-              label={strings.email}
-              value={email}
-              onChange={setEmail}
-              error={errors.sendEmailPassword?.message}
-              id='emailInput'
-              type='email'
-            />
-            <LinkContainer onClick={onHaveACode}>
-              <HaveACodeLabel>{strings.haveACode}</HaveACodeLabel>
-            </LinkContainer>
-            <Spacer height={40} />
-            <Button
-              label={strings.sendEmail}
-              disabled={loading || !isFormFilled()}
-              loading={loading}
-              onClick={handleSendEmail}
-            />
-          </Content>
-        </ScrollView>
+        <AppBar onBack={onBack} title={strings.forgotPassword} />
+        <Content>
+          <Logo src={logo} />
+          <Spacer height={60} />
+          <Label>{strings.fillEmail}</Label>
+          <TextField
+            label={strings.email}
+            value={email}
+            onChange={setEmail}
+            error={errors.sendEmailPassword?.message}
+            id='emailInput'
+            type='email'
+          />
+          <LinkContainer onClick={onHaveACode}>
+            <HaveACodeLabel>{strings.haveACode}</HaveACodeLabel>
+          </LinkContainer>
+          <Spacer height={40} />
+          <Button
+            label={strings.sendEmail}
+            disabled={loading || !isFormFilled()}
+            loading={loading}
+            onClick={handleSendEmail}
+          />
+        </Content>
       </Container>
     </UnAuthLayout>
   );

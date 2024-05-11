@@ -8,7 +8,6 @@ import {
   ChosePhotoLabel,
   Container,
   Content,
-  ScrollView,
   UserImage,
 } from "./styles";
 
@@ -82,76 +81,72 @@ const CreateAccount: React.FC = () => {
   return (
     <AuthLayout>
       <Container>
-        <ScrollView>
-          <AppBar
-            primaryAction={() => (
-              <MdLogout size={24} color={theme.colors.action} />
-            )}
-            onPrimaryAction={logout}
+        <AppBar
+          primaryAction={() => (
+            <MdLogout size={24} color={theme.colors.action} />
+          )}
+          onPrimaryAction={logout}
+        />
+        <Content>
+          <UserImage src={photo ? photo.url : defaultUser} />
+          <Spacer height={16} />
+          <input
+            name='logo-inpt'
+            accept='image/png, image/jpeg'
+            style={{ display: "none" }}
+            type='file'
+            onChange={({ target: { files } }) =>
+              handlePickImage(files ? files[0] : null)
+            }
+            ref={photoRef}
           />
-          <Content>
-            <UserImage src={photo ? photo.url : defaultUser} />
-            <Spacer height={16} />
-            <input
-              name='logo-inpt'
-              accept='image/png, image/jpeg'
-              style={{ display: "none" }}
-              type='file'
-              onChange={({ target: { files } }) =>
-                handlePickImage(files ? files[0] : null)
-              }
-              ref={photoRef}
-            />
-            <label htmlFor='logo-inpt'>
-              <ChosePhotoButton
-                onClick={() => photoRef.current && photoRef.current.click()}
-              >
-                <ChosePhotoLabel>{strings.addImage}</ChosePhotoLabel>
-              </ChosePhotoButton>
-            </label>
-            <Spacer height={16} />
-            <TextField
-              label={strings.name}
-              value={name}
-              onChange={setName}
-              id='nameInput'
-              type='text'
-            />
-            <TextField
-              label={strings.bornDay}
-              value={bornDay}
-              onChange={setBornDay}
-              placeholder='dd/mm/yyyy'
-              id='bornDayInput'
-              type='text'
-            />
-            <Select
-              label={strings.position}
-              data={positions}
-              onChange={(value) =>
-                typeof value === "string" &&
-                POSITIONS.includes(value) &&
-                setPosition(value)
-              }
-              value={position || ""}
-            />
-            <Select
-              label={strings.flag}
-              data={countries}
-              onChange={(value) =>
-                typeof value === "string" && setCountry(value)
-              }
-              value={country}
-            />
-            <Spacer height={40} />
-            <Button
-              label={strings.createProfile}
-              disabled={loading || !isFormFilled()}
-              loading={loading}
-              onClick={handleCreateUserData}
-            />
-          </Content>
-        </ScrollView>
+          <label htmlFor='logo-inpt'>
+            <ChosePhotoButton
+              onClick={() => photoRef.current && photoRef.current.click()}
+            >
+              <ChosePhotoLabel>{strings.addImage}</ChosePhotoLabel>
+            </ChosePhotoButton>
+          </label>
+          <Spacer height={16} />
+          <TextField
+            label={strings.name}
+            value={name}
+            onChange={setName}
+            id='nameInput'
+            type='text'
+          />
+          <TextField
+            label={strings.bornDay}
+            value={bornDay}
+            onChange={setBornDay}
+            placeholder='dd/mm/yyyy'
+            id='bornDayInput'
+            type='text'
+          />
+          <Select
+            label={strings.position}
+            data={positions}
+            onChange={(value) =>
+              typeof value === "string" &&
+              POSITIONS.includes(value) &&
+              setPosition(value)
+            }
+            value={position || ""}
+          />
+          <Select
+            label={strings.flag}
+            data={countries}
+            onChange={(value) => typeof value === "string" && setCountry(value)}
+            value={country}
+          />
+          <Spacer height={40} />
+          <Button
+            label={strings.createProfile}
+            disabled={loading || !isFormFilled()}
+            loading={loading}
+            onClick={handleCreateUserData}
+          />
+        </Content>
       </Container>
     </AuthLayout>
   );

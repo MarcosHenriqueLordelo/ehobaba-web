@@ -11,7 +11,6 @@ import {
   ConditionLabel,
   ConditionsView,
   Label,
-  ScrollView,
 } from "./styles";
 
 import Spacer from "../../../components/Spacer";
@@ -62,58 +61,56 @@ const ChangePassword: React.FC = () => {
   return (
     <UnAuthLayout>
       <Container>
-        <ScrollView>
-          <AppBar onBack={onBack} title={strings.forgotPassword} />
-          <Content>
-            <Logo src={logo} />
-            <Spacer height={16} />
-            <Label>{strings.insertNewPassword}</Label>
-            <TextField
-              label={strings.password}
-              value={password}
-              onChange={setPassword}
-              type='password'
-              id='passwordInput'
-            />
-            <TextField
-              label={strings.confirmPassword}
-              value={confPassword}
-              onChange={setConfPassword}
-              type='password'
-              id='confirmPasswordInput'
-            />
-            <ConditionsView>
-              <ConditionLabel
-                filled={hasNoSpaces(password) && password.trim().length > 0}
-              >
-                &bull; {strings.mustHaveNoSpaces}
-              </ConditionLabel>
-              <ConditionLabel filled={hasOneDigit(password)}>
-                &bull; {strings.hasOneDigit}
-              </ConditionLabel>
-              <ConditionLabel filled={hasMinimunLenght(password)}>
-                &bull; {strings.mustHaveMinimunLength}
-              </ConditionLabel>
-              <ConditionLabel filled={hasOneUpperCase(password)}>
-                &bull; {strings.hasOneUpperCase}
-              </ConditionLabel>
-              <ConditionLabel filled={hasOneLowerCase(password)}>
-                &bull; {strings.hasOneLowerCase}
-              </ConditionLabel>
+        <AppBar onBack={onBack} title={strings.forgotPassword} />
+        <Content>
+          <Logo src={logo} />
+          <Spacer height={16} />
+          <Label>{strings.insertNewPassword}</Label>
+          <TextField
+            label={strings.password}
+            value={password}
+            onChange={setPassword}
+            type='password'
+            id='passwordInput'
+          />
+          <TextField
+            label={strings.confirmPassword}
+            value={confPassword}
+            onChange={setConfPassword}
+            type='password'
+            id='confirmPasswordInput'
+          />
+          <ConditionsView>
+            <ConditionLabel
+              filled={hasNoSpaces(password) && password.trim().length > 0}
+            >
+              &bull; {strings.mustHaveNoSpaces}
+            </ConditionLabel>
+            <ConditionLabel filled={hasOneDigit(password)}>
+              &bull; {strings.hasOneDigit}
+            </ConditionLabel>
+            <ConditionLabel filled={hasMinimunLenght(password)}>
+              &bull; {strings.mustHaveMinimunLength}
+            </ConditionLabel>
+            <ConditionLabel filled={hasOneUpperCase(password)}>
+              &bull; {strings.hasOneUpperCase}
+            </ConditionLabel>
+            <ConditionLabel filled={hasOneLowerCase(password)}>
+              &bull; {strings.hasOneLowerCase}
+            </ConditionLabel>
 
-              <ConditionLabel filled={hasOneSpecialCharacter(password)}>
-                &bull; {strings.hasOneSpecialCharacter}
-              </ConditionLabel>
-            </ConditionsView>
-            <Spacer height={40} />
-            <Button
-              label={strings.changePassword}
-              disabled={loading || !isFormFilled()}
-              loading={loading}
-              onClick={handleChangePassword}
-            />
-          </Content>
-        </ScrollView>
+            <ConditionLabel filled={hasOneSpecialCharacter(password)}>
+              &bull; {strings.hasOneSpecialCharacter}
+            </ConditionLabel>
+          </ConditionsView>
+          <Spacer height={40} />
+          <Button
+            label={strings.changePassword}
+            disabled={loading || !isFormFilled()}
+            loading={loading}
+            onClick={handleChangePassword}
+          />
+        </Content>
       </Container>
     </UnAuthLayout>
   );

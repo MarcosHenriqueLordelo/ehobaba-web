@@ -31,8 +31,11 @@ const MainTab: React.FC = () => {
     }
   }, [currentTab]);
 
-  const handleNavigation = (screen: string, params?: any) =>
-    navigate(screen, { state: params });
+  const handleNavigation = useCallback(
+    (screen: string, params?: any) =>
+      screen === "back" ? navigate(-1) : navigate(screen, { state: params }),
+    []
+  );
 
   return (
     <AuthLayout>

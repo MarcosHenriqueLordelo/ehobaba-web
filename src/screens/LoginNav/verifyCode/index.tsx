@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import useUi from "../../../contexts/ui/useUi";
 import useUser from "../../../contexts/user/useUser";
 
-import { Logo, Container, Content, Label, ScrollView } from "./styles";
+import { Logo, Container, Content, Label } from "./styles";
 
 import Spacer from "../../../components/Spacer";
 import Button from "../../../components/Button";
@@ -49,41 +49,37 @@ const VerifyCode: React.FC = () => {
   return (
     <UnAuthLayout>
       <Container>
-        <ScrollView>
-          <AppBar onBack={onBack} title={strings.forgotPassword} />
-          <Content>
-            <Logo src={logo} />
-            <Spacer height={60} />
-            <Label>
-              {paramEmail
-                ? strings.intertCodeSended
-                : strings.insertEmailAndCode}
-            </Label>
-            {!paramEmail && (
-              <TextField
-                label={strings.email}
-                value={formEmail}
-                onChange={setEmail}
-                id='emailInput'
-                type='email'
-              />
-            )}
+        <AppBar onBack={onBack} title={strings.forgotPassword} />
+        <Content>
+          <Logo src={logo} />
+          <Spacer height={60} />
+          <Label>
+            {paramEmail ? strings.intertCodeSended : strings.insertEmailAndCode}
+          </Label>
+          {!paramEmail && (
             <TextField
-              label={strings.insertCode}
-              value={code}
-              onChange={setCode}
-              type='number'
-              id='codeInput'
+              label={strings.email}
+              value={formEmail}
+              onChange={setEmail}
+              id='emailInput'
+              type='email'
             />
-            <Spacer height={40} />
-            <Button
-              label={strings.goFoward}
-              disabled={loading || !isFormFilled()}
-              loading={loading}
-              onClick={handleSendEmail}
-            />
-          </Content>
-        </ScrollView>
+          )}
+          <TextField
+            label={strings.insertCode}
+            value={code}
+            onChange={setCode}
+            type='number'
+            id='codeInput'
+          />
+          <Spacer height={40} />
+          <Button
+            label={strings.goFoward}
+            disabled={loading || !isFormFilled()}
+            loading={loading}
+            onClick={handleSendEmail}
+          />
+        </Content>
       </Container>
     </UnAuthLayout>
   );
