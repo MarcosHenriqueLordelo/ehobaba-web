@@ -18,4 +18,4 @@ Aplicação criada com intuito de melhorar a experiência de anotar os eventos e
 
 ## **Capturas de Tela**
 
-<img src="./src/assets/screenshots/profile.jpeg" width="20%" height="20%">   <img src="./src/assets/screenshots/ranking.jpg" width="20%" height="20%">
+<img src="./src/assets/screenshots/profile.png" width="20%" height="20%">   <img src="./src/assets/screenshots/ranking.png" width="20%" height="20%">
