@@ -1,6 +1,6 @@
 # **Sobre o Projeto**
 
-Aplicatio criado para responder ao desafio proposto pela builders, que consiste em construir um aplicativo que consuma a localização atual do usuário e exiba na interface o endereço atual os dados climáticos da região e um botão para atualizar os dados.
+Aplicação criada com intuito de melhorar a experiência de anotar os eventos e pontuações que ocorrem durante uma partida de futebol. Os Usuários podem criar grupos onde são registradas as partidas, sendo ranqueados e podendo compartilhar seus cards de jogadores uns com os outros.
 
 ### **Feito Com**
 
